@@ -6,15 +6,16 @@ from collections.abc import Mapping
 from typing import Annotated, Any, Literal, TypedDict
 
 import httpx
+from fireworks import APIError as FireworksAPIError
+from fireworks import NotFoundError as FireworksNotFoundError
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.exceptions import OutputParserException
 from langgraph.graph import END, START, StateGraph
-from openai import APIError
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from scripts.dashboard_data import build_sprint_metrics, build_team_metrics
 
-DEFAULT_FIREWORKS_MODEL = "accounts/fireworks/models/llama-v3p1-8b-instruct"
+DEFAULT_FIREWORKS_MODEL = "accounts/fireworks/models/glm-5p3-flash"
 MAX_FINDINGS = 4
 
 
@@ -274,7 +275,14 @@ def build_portfolio_analysis_graph(model):
                     HumanMessage(content=json.dumps(request, allow_nan=False)),
                 ]
             )
-        except (httpx.HTTPError, APIError) as exc:
+        except FireworksNotFoundError as exc:
+            raise QAAgentConfigurationError(
+                "Fireworks could not find the configured model. The default model "
+                "is now accounts/fireworks/models/glm-5p3-flash. If you set "
+                "TESTPULSE_FIREWORKS_MODEL, remove it or choose a model available "
+                "to your Fireworks account."
+            ) from exc
+        except (httpx.HTTPError, FireworksAPIError) as exc:
             raise QAAgentUnavailableError(
                 "The Fireworks request could not be completed. Check the API key, "
                 "model name, account access, network connection, and rate limits."

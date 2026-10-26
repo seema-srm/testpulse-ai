@@ -286,7 +286,7 @@ def test_fireworks_connection_error_is_actionable(project_files):
 def test_fireworks_api_errors_are_actionable(project_files):
     history, teams_config = project_files
     from scripts.dashboard_data import load_dashboard_data
-    from openai import APIError
+    from fireworks import APIError
 
     data = load_dashboard_data(history, history.parent / "no-events.jsonl", teams_config)
     error = APIError(
@@ -298,6 +298,28 @@ def test_fireworks_api_errors_are_actionable(project_files):
 
     with pytest.raises(QAAgentUnavailableError, match="Fireworks request"):
         run_portfolio_analysis(data, model=model)
+
+
+def test_fireworks_model_not_found_is_actionable(project_files):
+    history, teams_config = project_files
+    from scripts.dashboard_data import load_dashboard_data
+    from fireworks import NotFoundError
+
+    data = load_dashboard_data(history, history.parent / "no-events.jsonl", teams_config)
+    request = httpx.Request(
+        "POST", "https://api.fireworks.ai/inference/v1/chat/completions"
+    )
+    error = NotFoundError(
+        "model not found",
+        response=httpx.Response(404, request=request),
+        body={"error": "model not found"},
+    )
+
+    with pytest.raises(
+        QAAgentConfigurationError,
+        match="default model is now accounts/fireworks/models/glm-5p3-flash",
+    ):
+        run_portfolio_analysis(data, model=FakeStructuredModel(error=error))
 
 
 def test_analysis_does_not_modify_portfolio_data(project_files):
