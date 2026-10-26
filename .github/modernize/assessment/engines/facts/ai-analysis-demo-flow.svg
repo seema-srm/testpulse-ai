@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1050" viewBox="0 0 1800 1050" role="img" aria-labelledby="title description">
+  <title id="title">TestPulse AI analysis demo flow</title>
+  <desc id="description">Six steps from loading synthetic QA data through preparing metrics, user request, local Ollama risk findings, host validation and factual summary, to the displayed report. The model does not call tools or modify data.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#0F766E"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #17324D; }
+      .title { font-size: 38px; font-weight: 700; }
+      .subtitle { font-size: 21px; fill: #475569; }
+      .step { font-size: 23px; font-weight: 700; fill: #0F766E; }
+      .heading { font-size: 26px; font-weight: 700; }
+      .body { font-size: 21px; }
+      .small { font-size: 19px; fill: #475569; }
+      .output { font-size: 19px; font-weight: 600; fill: #0F766E; }
+      .card { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 2; }
+      .host-card { fill: #F0FDFA; stroke: #0F766E; stroke-width: 2; }
+      .model-card { fill: #F5F3FF; stroke: #7C3AED; stroke-width: 2; }
+      .connector { fill: none; stroke: #0F766E; stroke-width: 4; marker-end: url(#arrow); }
+      .boundary { fill: none; stroke: #7C3AED; stroke-width: 3; stroke-dasharray: 10 9; }
+    </style>
+  </defs>
+
+  <rect width="1800" height="1050" fill="#F8FAFC"/>
+  <text x="70" y="75" class="title">TestPulse AI - How the AI Risk Analysis works</text>
+  <text x="70" y="116" class="subtitle">Instructor-style six-step flow, adapted to the real app. Synthetic data stays local.</text>
+
+  <rect x="68" y="155" width="1664" height="765" rx="24" fill="#FFFFFF" stroke="#D7E3EA" stroke-width="2"/>
+
+  <rect x="95" y="190" width="480" height="255" rx="18" class="card"/>
+  <circle cx="133" cy="232" r="23" fill="#CCFBF1"/>
+  <text x="133" y="240" text-anchor="middle" class="step">1</text>
+  <text x="172" y="240" class="heading">Load synthetic data</text>
+  <text x="125" y="292" class="body">Historical CSVs + team configuration</text>
+  <text x="125" y="330" class="body">Replay simulation events over copies</text>
+  <text x="125" y="382" class="output">Output: current portfolio data</text>
+
+  <path d="M588 318 H650" class="connector"/>
+
+  <rect x="670" y="190" width="480" height="255" rx="18" class="card"/>
+  <circle cx="708" cy="232" r="23" fill="#CCFBF1"/>
+  <text x="708" y="240" text-anchor="middle" class="step">2</text>
+  <text x="747" y="240" class="heading">User starts analysis</text>
+  <text x="700" y="300" class="body">Selects Run Portfolio</text>
+  <text x="700" y="337" class="body">Analysis in the dashboard</text>
+  <text x="700" y="390" class="output">No automatic agent run</text>
+
+  <path d="M1190 318 H1250" class="connector"/>
+
+  <rect x="1270" y="190" width="430" height="255" rx="18" class="host-card"/>
+  <circle cx="1308" cy="232" r="23" fill="#CCFBF1"/>
+  <text x="1308" y="240" text-anchor="middle" class="step">3</text>
+  <text x="1347" y="240" class="heading">Prepare model context</text>
+  <text x="1300" y="292" class="body">Calculate team and sprint metrics</text>
+  <text x="1300" y="330" class="body">Create team-specific evidence IDs</text>
+  <text x="1300" y="382" class="output">Output: aggregate facts only</text>
+
+  <path d="M1485 466 V510" class="connector"/>
+
+  <rect x="1270" y="530" width="430" height="275" rx="18" class="model-card"/>
+  <circle cx="1308" cy="572" r="23" fill="#EDE9FE"/>
+  <text x="1308" y="580" text-anchor="middle" class="step">4</text>
+  <text x="1347" y="580" class="heading">Local model responds</text>
+  <text x="1300" y="632" class="body">Ollama: llama3.1:8b</text>
+  <text x="1300" y="670" class="body">Returns structured risk findings</text>
+  <text x="1300" y="723" class="output">No tools are provided to the LLM</text>
+
+  <path d="M1248 668 H1190" class="connector"/>
+
+  <rect x="670" y="530" width="480" height="275" rx="18" class="host-card"/>
+  <circle cx="708" cy="572" r="23" fill="#CCFBF1"/>
+  <text x="708" y="580" text-anchor="middle" class="step">5</text>
+  <text x="747" y="580" class="heading">Host validates and summarizes</text>
+  <text x="700" y="632" class="body">Check team and evidence references</text>
+  <text x="700" y="670" class="body">Python computes factual summary</text>
+  <text x="700" y="723" class="output">Model cannot set portfolio totals</text>
+
+  <path d="M648 668 H588" class="connector"/>
+
+  <rect x="95" y="530" width="480" height="275" rx="18" class="card"/>
+  <circle cx="133" cy="572" r="23" fill="#CCFBF1"/>
+  <text x="133" y="580" text-anchor="middle" class="step">6</text>
+  <text x="172" y="580" class="heading">Show analysis report</text>
+  <text x="125" y="632" class="body">Factual portfolio summary</text>
+  <text x="125" y="670" class="body">Ranked findings, evidence, actions</text>
+  <text x="125" y="723" class="output">User reviews recommendations</text>
+
+  <path d="M1245 170 V915" class="boundary"/>
+  <rect x="1173" y="830" width="145" height="42" rx="10" fill="#F5F3FF"/>
+  <text x="1245" y="858" text-anchor="middle" class="small">Model boundary</text>
+
+  <rect x="95" y="845" width="1050" height="48" rx="12" fill="#ECFDF5"/>
+  <text x="118" y="877" class="small">Key idea: the LLM suggests findings; host code owns data access, validation, calculations, and display.</text>
+
+  <text x="70" y="978" class="subtitle">All records are synthetic. The app does not connect to company Jira or Zephyr.</text>
+</svg>

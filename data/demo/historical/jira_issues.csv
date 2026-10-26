@@ -1,0 +1,289 @@
+issue_key,project_key,team_id,sprint_id,issue_type,priority,status,created_date,resolved_date,blocked,summary
+QAA-1,QAA,alpha,QAA-SPR-01,Story,High,Open,2026-07-06,,false,Payments story 1 for sprint 1
+QAA-2,QAA,alpha,QAA-SPR-01,Story,Low,Done,2026-07-06,2026-07-19,false,Payments story 2 for sprint 1
+QAA-3,QAA,alpha,QAA-SPR-01,Story,High,In Progress,2026-07-06,,false,Payments story 3 for sprint 1
+QAA-4,QAA,alpha,QAA-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Payments story 4 for sprint 1
+QAA-5,QAA,alpha,QAA-SPR-01,Story,High,Open,2026-07-06,,false,Payments story 5 for sprint 1
+QAA-6,QAA,alpha,QAA-SPR-01,Story,Low,Open,2026-07-06,,false,Payments story 6 for sprint 1
+QAA-7,QAA,alpha,QAA-SPR-01,Story,High,Open,2026-07-06,,false,Payments story 7 for sprint 1
+QAA-8,QAA,alpha,QAA-SPR-01,Story,Medium,Open,2026-07-06,,false,Payments story 8 for sprint 1
+QAA-9,QAA,alpha,QAA-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Payments story 9 for sprint 1
+QAA-10,QAA,alpha,QAA-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Payments story 10 for sprint 1
+QAA-11,QAA,alpha,QAA-SPR-01,Story,Low,Done,2026-07-06,2026-07-19,false,Payments story 11 for sprint 1
+QAA-12,QAA,alpha,QAA-SPR-01,Story,High,Open,2026-07-06,,false,Payments story 12 for sprint 1
+QAA-13,QAA,alpha,QAA-SPR-02,Bug,Critical,Open,2026-07-20,,true,Payments bug 1 for sprint 2
+QAA-14,QAA,alpha,QAA-SPR-02,Story,High,In Progress,2026-07-20,,false,Payments story 2 for sprint 2
+QAA-15,QAA,alpha,QAA-SPR-02,Story,Medium,Done,2026-07-20,2026-08-02,false,Payments story 3 for sprint 2
+QAA-16,QAA,alpha,QAA-SPR-02,Story,High,Done,2026-07-20,2026-08-02,false,Payments story 4 for sprint 2
+QAA-17,QAA,alpha,QAA-SPR-02,Story,High,In Progress,2026-07-20,,false,Payments story 5 for sprint 2
+QAA-18,QAA,alpha,QAA-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Payments story 6 for sprint 2
+QAA-19,QAA,alpha,QAA-SPR-02,Story,Medium,Open,2026-07-20,,false,Payments story 7 for sprint 2
+QAA-20,QAA,alpha,QAA-SPR-02,Story,Low,Done,2026-07-20,2026-08-02,false,Payments story 8 for sprint 2
+QAA-21,QAA,alpha,QAA-SPR-02,Story,Low,In Progress,2026-07-20,,false,Payments story 9 for sprint 2
+QAA-22,QAA,alpha,QAA-SPR-02,Story,Medium,Done,2026-07-20,2026-08-02,false,Payments story 10 for sprint 2
+QAA-23,QAA,alpha,QAA-SPR-02,Story,Low,Done,2026-07-20,2026-08-02,false,Payments story 11 for sprint 2
+QAA-24,QAA,alpha,QAA-SPR-02,Story,Low,In Progress,2026-07-20,,false,Payments story 12 for sprint 2
+QAA-25,QAA,alpha,QAA-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Payments story 1 for sprint 3
+QAA-26,QAA,alpha,QAA-SPR-03,Story,Medium,Open,2026-08-03,,false,Payments story 2 for sprint 3
+QAA-27,QAA,alpha,QAA-SPR-03,Story,Medium,Done,2026-08-03,2026-08-16,false,Payments story 3 for sprint 3
+QAA-28,QAA,alpha,QAA-SPR-03,Story,High,In Progress,2026-08-03,,false,Payments story 4 for sprint 3
+QAA-29,QAA,alpha,QAA-SPR-03,Story,Medium,Open,2026-08-03,,false,Payments story 5 for sprint 3
+QAA-30,QAA,alpha,QAA-SPR-03,Story,Low,Open,2026-08-03,,false,Payments story 6 for sprint 3
+QAA-31,QAA,alpha,QAA-SPR-03,Story,High,Open,2026-08-03,,false,Payments story 7 for sprint 3
+QAA-32,QAA,alpha,QAA-SPR-03,Story,Low,Open,2026-08-03,,false,Payments story 8 for sprint 3
+QAA-33,QAA,alpha,QAA-SPR-03,Story,Low,Done,2026-08-03,2026-08-16,false,Payments story 9 for sprint 3
+QAA-34,QAA,alpha,QAA-SPR-03,Story,High,Open,2026-08-03,,false,Payments story 10 for sprint 3
+QAA-35,QAA,alpha,QAA-SPR-03,Story,Medium,Done,2026-08-03,2026-08-16,false,Payments story 11 for sprint 3
+QAA-36,QAA,alpha,QAA-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Payments story 12 for sprint 3
+QAA-37,QAA,alpha,QAA-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Payments story 1 for sprint 4
+QAA-38,QAA,alpha,QAA-SPR-04,Story,Medium,Open,2026-08-17,,false,Payments story 2 for sprint 4
+QAA-39,QAA,alpha,QAA-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Payments story 3 for sprint 4
+QAA-40,QAA,alpha,QAA-SPR-04,Story,Medium,In Progress,2026-08-17,,false,Payments story 4 for sprint 4
+QAA-41,QAA,alpha,QAA-SPR-04,Story,Medium,Open,2026-08-17,,false,Payments story 5 for sprint 4
+QAA-42,QAA,alpha,QAA-SPR-04,Story,Medium,Done,2026-08-17,2026-08-30,false,Payments story 6 for sprint 4
+QAA-43,QAA,alpha,QAA-SPR-04,Story,High,Done,2026-08-17,2026-08-30,false,Payments story 7 for sprint 4
+QAA-44,QAA,alpha,QAA-SPR-04,Story,Low,Open,2026-08-17,,false,Payments story 8 for sprint 4
+QAA-45,QAA,alpha,QAA-SPR-04,Story,Medium,Open,2026-08-17,,false,Payments story 9 for sprint 4
+QAA-46,QAA,alpha,QAA-SPR-04,Story,Low,Open,2026-08-17,,false,Payments story 10 for sprint 4
+QAA-47,QAA,alpha,QAA-SPR-04,Story,Low,In Progress,2026-08-17,,false,Payments story 11 for sprint 4
+QAA-48,QAA,alpha,QAA-SPR-04,Story,Medium,In Progress,2026-08-17,,false,Payments story 12 for sprint 4
+QAA-49,QAA,alpha,QAA-SPR-05,Bug,Medium,Done,2026-08-31,2026-09-13,false,Payments bug 1 for sprint 5
+QAA-50,QAA,alpha,QAA-SPR-05,Story,Medium,Open,2026-08-31,,false,Payments story 2 for sprint 5
+QAA-51,QAA,alpha,QAA-SPR-05,Story,Medium,Open,2026-08-31,,false,Payments story 3 for sprint 5
+QAA-52,QAA,alpha,QAA-SPR-05,Story,High,Open,2026-08-31,,false,Payments story 4 for sprint 5
+QAA-53,QAA,alpha,QAA-SPR-05,Story,Low,Open,2026-08-31,,false,Payments story 5 for sprint 5
+QAA-54,QAA,alpha,QAA-SPR-05,Story,Low,Done,2026-08-31,2026-09-13,false,Payments story 6 for sprint 5
+QAA-55,QAA,alpha,QAA-SPR-05,Story,Medium,Open,2026-08-31,,false,Payments story 7 for sprint 5
+QAA-56,QAA,alpha,QAA-SPR-05,Story,Medium,Open,2026-08-31,,false,Payments story 8 for sprint 5
+QAA-57,QAA,alpha,QAA-SPR-05,Story,Medium,Done,2026-08-31,2026-09-13,false,Payments story 9 for sprint 5
+QAA-58,QAA,alpha,QAA-SPR-05,Story,High,In Progress,2026-08-31,,false,Payments story 10 for sprint 5
+QAA-59,QAA,alpha,QAA-SPR-05,Story,High,In Progress,2026-08-31,,false,Payments story 11 for sprint 5
+QAA-60,QAA,alpha,QAA-SPR-05,Story,Low,Open,2026-08-31,,false,Payments story 12 for sprint 5
+QAA-61,QAA,alpha,QAA-SPR-06,Story,Low,Open,2026-09-14,,false,Payments story 1 for sprint 6
+QAA-62,QAA,alpha,QAA-SPR-06,Story,Low,Done,2026-09-14,2026-09-27,false,Payments story 2 for sprint 6
+QAA-63,QAA,alpha,QAA-SPR-06,Story,Medium,In Progress,2026-09-14,,false,Payments story 3 for sprint 6
+QAA-64,QAA,alpha,QAA-SPR-06,Story,High,Done,2026-09-14,2026-09-27,false,Payments story 4 for sprint 6
+QAA-65,QAA,alpha,QAA-SPR-06,Story,Medium,In Progress,2026-09-14,,false,Payments story 5 for sprint 6
+QAA-66,QAA,alpha,QAA-SPR-06,Story,High,Done,2026-09-14,2026-09-27,false,Payments story 6 for sprint 6
+QAA-67,QAA,alpha,QAA-SPR-06,Story,Low,Done,2026-09-14,2026-09-27,false,Payments story 7 for sprint 6
+QAA-68,QAA,alpha,QAA-SPR-06,Story,High,Done,2026-09-14,2026-09-27,false,Payments story 8 for sprint 6
+QAA-69,QAA,alpha,QAA-SPR-06,Story,Medium,Open,2026-09-14,,false,Payments story 9 for sprint 6
+QAA-70,QAA,alpha,QAA-SPR-06,Story,Low,Done,2026-09-14,2026-09-27,false,Payments story 10 for sprint 6
+QAA-71,QAA,alpha,QAA-SPR-06,Story,High,Done,2026-09-14,2026-09-27,false,Payments story 11 for sprint 6
+QAA-72,QAA,alpha,QAA-SPR-06,Story,Medium,Open,2026-09-14,,false,Payments story 12 for sprint 6
+QAB-1,QAB,beta,QAB-SPR-01,Story,Low,Open,2026-07-06,,false,Checkout story 1 for sprint 1
+QAB-2,QAB,beta,QAB-SPR-01,Story,Medium,In Progress,2026-07-06,,false,Checkout story 2 for sprint 1
+QAB-3,QAB,beta,QAB-SPR-01,Story,Medium,Open,2026-07-06,,false,Checkout story 3 for sprint 1
+QAB-4,QAB,beta,QAB-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Checkout story 4 for sprint 1
+QAB-5,QAB,beta,QAB-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Checkout story 5 for sprint 1
+QAB-6,QAB,beta,QAB-SPR-01,Story,High,In Progress,2026-07-06,,false,Checkout story 6 for sprint 1
+QAB-7,QAB,beta,QAB-SPR-01,Story,Low,Open,2026-07-06,,false,Checkout story 7 for sprint 1
+QAB-8,QAB,beta,QAB-SPR-01,Story,Low,Done,2026-07-06,2026-07-19,false,Checkout story 8 for sprint 1
+QAB-9,QAB,beta,QAB-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Checkout story 9 for sprint 1
+QAB-10,QAB,beta,QAB-SPR-01,Story,Low,Done,2026-07-06,2026-07-19,false,Checkout story 10 for sprint 1
+QAB-11,QAB,beta,QAB-SPR-01,Story,High,Open,2026-07-06,,false,Checkout story 11 for sprint 1
+QAB-12,QAB,beta,QAB-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Checkout story 12 for sprint 1
+QAB-900,QAB,beta,QAB-SPR-02,Bug,Critical,Open,2026-07-20,,true,Checkout payment authorization intermittently fails
+QAB-14,QAB,beta,QAB-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Checkout story 2 for sprint 2
+QAB-15,QAB,beta,QAB-SPR-02,Story,High,Done,2026-07-20,2026-08-02,false,Checkout story 3 for sprint 2
+QAB-16,QAB,beta,QAB-SPR-02,Story,Low,Done,2026-07-20,2026-08-02,false,Checkout story 4 for sprint 2
+QAB-17,QAB,beta,QAB-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Checkout story 5 for sprint 2
+QAB-18,QAB,beta,QAB-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Checkout story 6 for sprint 2
+QAB-19,QAB,beta,QAB-SPR-02,Story,Low,In Progress,2026-07-20,,false,Checkout story 7 for sprint 2
+QAB-20,QAB,beta,QAB-SPR-02,Story,Low,Done,2026-07-20,2026-08-02,false,Checkout story 8 for sprint 2
+QAB-21,QAB,beta,QAB-SPR-02,Story,Low,Open,2026-07-20,,false,Checkout story 9 for sprint 2
+QAB-22,QAB,beta,QAB-SPR-02,Story,High,Done,2026-07-20,2026-08-02,false,Checkout story 10 for sprint 2
+QAB-23,QAB,beta,QAB-SPR-02,Story,Low,In Progress,2026-07-20,,false,Checkout story 11 for sprint 2
+QAB-24,QAB,beta,QAB-SPR-02,Story,High,In Progress,2026-07-20,,false,Checkout story 12 for sprint 2
+QAB-25,QAB,beta,QAB-SPR-03,Story,Low,Done,2026-08-03,2026-08-16,false,Checkout story 1 for sprint 3
+QAB-26,QAB,beta,QAB-SPR-03,Story,High,Open,2026-08-03,,false,Checkout story 2 for sprint 3
+QAB-27,QAB,beta,QAB-SPR-03,Story,High,Done,2026-08-03,2026-08-16,false,Checkout story 3 for sprint 3
+QAB-28,QAB,beta,QAB-SPR-03,Story,Medium,Done,2026-08-03,2026-08-16,false,Checkout story 4 for sprint 3
+QAB-29,QAB,beta,QAB-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Checkout story 5 for sprint 3
+QAB-30,QAB,beta,QAB-SPR-03,Story,Medium,Done,2026-08-03,2026-08-16,false,Checkout story 6 for sprint 3
+QAB-31,QAB,beta,QAB-SPR-03,Story,High,Done,2026-08-03,2026-08-16,false,Checkout story 7 for sprint 3
+QAB-32,QAB,beta,QAB-SPR-03,Story,High,In Progress,2026-08-03,,false,Checkout story 8 for sprint 3
+QAB-33,QAB,beta,QAB-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Checkout story 9 for sprint 3
+QAB-34,QAB,beta,QAB-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Checkout story 10 for sprint 3
+QAB-35,QAB,beta,QAB-SPR-03,Story,Low,In Progress,2026-08-03,,false,Checkout story 11 for sprint 3
+QAB-36,QAB,beta,QAB-SPR-03,Story,Low,Open,2026-08-03,,false,Checkout story 12 for sprint 3
+QAB-37,QAB,beta,QAB-SPR-04,Story,High,Open,2026-08-17,,false,Checkout story 1 for sprint 4
+QAB-38,QAB,beta,QAB-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Checkout story 2 for sprint 4
+QAB-39,QAB,beta,QAB-SPR-04,Story,High,Done,2026-08-17,2026-08-30,false,Checkout story 3 for sprint 4
+QAB-40,QAB,beta,QAB-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Checkout story 4 for sprint 4
+QAB-41,QAB,beta,QAB-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Checkout story 5 for sprint 4
+QAB-42,QAB,beta,QAB-SPR-04,Story,Medium,Done,2026-08-17,2026-08-30,false,Checkout story 6 for sprint 4
+QAB-43,QAB,beta,QAB-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Checkout story 7 for sprint 4
+QAB-44,QAB,beta,QAB-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Checkout story 8 for sprint 4
+QAB-45,QAB,beta,QAB-SPR-04,Story,High,Open,2026-08-17,,false,Checkout story 9 for sprint 4
+QAB-46,QAB,beta,QAB-SPR-04,Story,High,Open,2026-08-17,,false,Checkout story 10 for sprint 4
+QAB-47,QAB,beta,QAB-SPR-04,Story,Low,In Progress,2026-08-17,,false,Checkout story 11 for sprint 4
+QAB-48,QAB,beta,QAB-SPR-04,Story,Low,Open,2026-08-17,,false,Checkout story 12 for sprint 4
+QAB-49,QAB,beta,QAB-SPR-05,Bug,High,Done,2026-08-31,2026-09-13,false,Checkout bug 1 for sprint 5
+QAB-50,QAB,beta,QAB-SPR-05,Story,Medium,Done,2026-08-31,2026-09-13,false,Checkout story 2 for sprint 5
+QAB-51,QAB,beta,QAB-SPR-05,Story,Low,Open,2026-08-31,,false,Checkout story 3 for sprint 5
+QAB-52,QAB,beta,QAB-SPR-05,Story,High,Done,2026-08-31,2026-09-13,false,Checkout story 4 for sprint 5
+QAB-53,QAB,beta,QAB-SPR-05,Story,High,Open,2026-08-31,,false,Checkout story 5 for sprint 5
+QAB-54,QAB,beta,QAB-SPR-05,Story,Medium,Open,2026-08-31,,false,Checkout story 6 for sprint 5
+QAB-55,QAB,beta,QAB-SPR-05,Story,Medium,Done,2026-08-31,2026-09-13,false,Checkout story 7 for sprint 5
+QAB-56,QAB,beta,QAB-SPR-05,Story,High,Done,2026-08-31,2026-09-13,false,Checkout story 8 for sprint 5
+QAB-57,QAB,beta,QAB-SPR-05,Story,Medium,In Progress,2026-08-31,,false,Checkout story 9 for sprint 5
+QAB-58,QAB,beta,QAB-SPR-05,Story,Medium,Done,2026-08-31,2026-09-13,false,Checkout story 10 for sprint 5
+QAB-59,QAB,beta,QAB-SPR-05,Story,Low,Open,2026-08-31,,false,Checkout story 11 for sprint 5
+QAB-60,QAB,beta,QAB-SPR-05,Story,Low,In Progress,2026-08-31,,false,Checkout story 12 for sprint 5
+QAB-61,QAB,beta,QAB-SPR-06,Story,Low,Open,2026-09-14,,false,Checkout story 1 for sprint 6
+QAB-62,QAB,beta,QAB-SPR-06,Story,Medium,Done,2026-09-14,2026-09-27,false,Checkout story 2 for sprint 6
+QAB-63,QAB,beta,QAB-SPR-06,Story,Low,In Progress,2026-09-14,,false,Checkout story 3 for sprint 6
+QAB-64,QAB,beta,QAB-SPR-06,Story,Low,Done,2026-09-14,2026-09-27,false,Checkout story 4 for sprint 6
+QAB-65,QAB,beta,QAB-SPR-06,Story,High,In Progress,2026-09-14,,false,Checkout story 5 for sprint 6
+QAB-66,QAB,beta,QAB-SPR-06,Story,Low,Open,2026-09-14,,false,Checkout story 6 for sprint 6
+QAB-67,QAB,beta,QAB-SPR-06,Story,Low,In Progress,2026-09-14,,false,Checkout story 7 for sprint 6
+QAB-68,QAB,beta,QAB-SPR-06,Story,Medium,In Progress,2026-09-14,,false,Checkout story 8 for sprint 6
+QAB-69,QAB,beta,QAB-SPR-06,Story,High,Done,2026-09-14,2026-09-27,false,Checkout story 9 for sprint 6
+QAB-70,QAB,beta,QAB-SPR-06,Story,Medium,Open,2026-09-14,,false,Checkout story 10 for sprint 6
+QAB-71,QAB,beta,QAB-SPR-06,Story,High,In Progress,2026-09-14,,false,Checkout story 11 for sprint 6
+QAB-72,QAB,beta,QAB-SPR-06,Story,Medium,Done,2026-09-14,2026-09-27,false,Checkout story 12 for sprint 6
+QAC-1,QAC,gamma,QAC-SPR-01,Story,High,Open,2026-07-06,,false,Mobile story 1 for sprint 1
+QAC-2,QAC,gamma,QAC-SPR-01,Story,Low,In Progress,2026-07-06,,false,Mobile story 2 for sprint 1
+QAC-3,QAC,gamma,QAC-SPR-01,Story,High,Open,2026-07-06,,false,Mobile story 3 for sprint 1
+QAC-4,QAC,gamma,QAC-SPR-01,Story,High,In Progress,2026-07-06,,false,Mobile story 4 for sprint 1
+QAC-5,QAC,gamma,QAC-SPR-01,Story,Medium,Done,2026-07-06,2026-07-19,false,Mobile story 5 for sprint 1
+QAC-6,QAC,gamma,QAC-SPR-01,Story,High,In Progress,2026-07-06,,false,Mobile story 6 for sprint 1
+QAC-7,QAC,gamma,QAC-SPR-01,Story,High,In Progress,2026-07-06,,false,Mobile story 7 for sprint 1
+QAC-8,QAC,gamma,QAC-SPR-01,Story,High,Open,2026-07-06,,false,Mobile story 8 for sprint 1
+QAC-9,QAC,gamma,QAC-SPR-01,Story,High,Open,2026-07-06,,false,Mobile story 9 for sprint 1
+QAC-10,QAC,gamma,QAC-SPR-01,Story,Low,In Progress,2026-07-06,,false,Mobile story 10 for sprint 1
+QAC-11,QAC,gamma,QAC-SPR-01,Story,Low,In Progress,2026-07-06,,false,Mobile story 11 for sprint 1
+QAC-12,QAC,gamma,QAC-SPR-01,Story,High,Open,2026-07-06,,false,Mobile story 12 for sprint 1
+QAC-13,QAC,gamma,QAC-SPR-02,Bug,Critical,Open,2026-07-20,,true,Mobile bug 1 for sprint 2
+QAC-14,QAC,gamma,QAC-SPR-02,Story,Low,Open,2026-07-20,,false,Mobile story 2 for sprint 2
+QAC-15,QAC,gamma,QAC-SPR-02,Story,Medium,Done,2026-07-20,2026-08-02,false,Mobile story 3 for sprint 2
+QAC-16,QAC,gamma,QAC-SPR-02,Story,Low,Done,2026-07-20,2026-08-02,false,Mobile story 4 for sprint 2
+QAC-17,QAC,gamma,QAC-SPR-02,Story,Medium,Done,2026-07-20,2026-08-02,false,Mobile story 5 for sprint 2
+QAC-18,QAC,gamma,QAC-SPR-02,Story,Medium,Done,2026-07-20,2026-08-02,false,Mobile story 6 for sprint 2
+QAC-19,QAC,gamma,QAC-SPR-02,Story,High,Done,2026-07-20,2026-08-02,false,Mobile story 7 for sprint 2
+QAC-20,QAC,gamma,QAC-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Mobile story 8 for sprint 2
+QAC-21,QAC,gamma,QAC-SPR-02,Story,High,In Progress,2026-07-20,,false,Mobile story 9 for sprint 2
+QAC-22,QAC,gamma,QAC-SPR-02,Story,High,Done,2026-07-20,2026-08-02,false,Mobile story 10 for sprint 2
+QAC-23,QAC,gamma,QAC-SPR-02,Story,High,Open,2026-07-20,,false,Mobile story 11 for sprint 2
+QAC-24,QAC,gamma,QAC-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Mobile story 12 for sprint 2
+QAC-25,QAC,gamma,QAC-SPR-03,Story,High,In Progress,2026-08-03,,false,Mobile story 1 for sprint 3
+QAC-26,QAC,gamma,QAC-SPR-03,Story,Medium,Open,2026-08-03,,false,Mobile story 2 for sprint 3
+QAC-27,QAC,gamma,QAC-SPR-03,Story,High,Done,2026-08-03,2026-08-16,false,Mobile story 3 for sprint 3
+QAC-28,QAC,gamma,QAC-SPR-03,Story,Medium,Open,2026-08-03,,false,Mobile story 4 for sprint 3
+QAC-29,QAC,gamma,QAC-SPR-03,Story,Low,In Progress,2026-08-03,,false,Mobile story 5 for sprint 3
+QAC-30,QAC,gamma,QAC-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Mobile story 6 for sprint 3
+QAC-31,QAC,gamma,QAC-SPR-03,Story,Low,Open,2026-08-03,,false,Mobile story 7 for sprint 3
+QAC-32,QAC,gamma,QAC-SPR-03,Story,Medium,Done,2026-08-03,2026-08-16,false,Mobile story 8 for sprint 3
+QAC-33,QAC,gamma,QAC-SPR-03,Story,High,Open,2026-08-03,,false,Mobile story 9 for sprint 3
+QAC-34,QAC,gamma,QAC-SPR-03,Story,High,In Progress,2026-08-03,,false,Mobile story 10 for sprint 3
+QAC-35,QAC,gamma,QAC-SPR-03,Story,Medium,Open,2026-08-03,,false,Mobile story 11 for sprint 3
+QAC-36,QAC,gamma,QAC-SPR-03,Story,Low,Done,2026-08-03,2026-08-16,false,Mobile story 12 for sprint 3
+QAC-37,QAC,gamma,QAC-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Mobile story 1 for sprint 4
+QAC-38,QAC,gamma,QAC-SPR-04,Story,Low,In Progress,2026-08-17,,false,Mobile story 2 for sprint 4
+QAC-39,QAC,gamma,QAC-SPR-04,Story,Low,In Progress,2026-08-17,,false,Mobile story 3 for sprint 4
+QAC-40,QAC,gamma,QAC-SPR-04,Story,Medium,In Progress,2026-08-17,,false,Mobile story 4 for sprint 4
+QAC-41,QAC,gamma,QAC-SPR-04,Story,Low,In Progress,2026-08-17,,false,Mobile story 5 for sprint 4
+QAC-42,QAC,gamma,QAC-SPR-04,Story,Low,In Progress,2026-08-17,,false,Mobile story 6 for sprint 4
+QAC-43,QAC,gamma,QAC-SPR-04,Story,High,Done,2026-08-17,2026-08-30,false,Mobile story 7 for sprint 4
+QAC-44,QAC,gamma,QAC-SPR-04,Story,Low,In Progress,2026-08-17,,false,Mobile story 8 for sprint 4
+QAC-45,QAC,gamma,QAC-SPR-04,Story,Low,In Progress,2026-08-17,,false,Mobile story 9 for sprint 4
+QAC-46,QAC,gamma,QAC-SPR-04,Story,High,Open,2026-08-17,,false,Mobile story 10 for sprint 4
+QAC-47,QAC,gamma,QAC-SPR-04,Story,Low,Open,2026-08-17,,false,Mobile story 11 for sprint 4
+QAC-48,QAC,gamma,QAC-SPR-04,Story,Medium,In Progress,2026-08-17,,false,Mobile story 12 for sprint 4
+QAC-49,QAC,gamma,QAC-SPR-05,Bug,Low,Done,2026-08-31,2026-09-13,false,Mobile bug 1 for sprint 5
+QAC-50,QAC,gamma,QAC-SPR-05,Story,Low,Done,2026-08-31,2026-09-13,false,Mobile story 2 for sprint 5
+QAC-51,QAC,gamma,QAC-SPR-05,Story,Medium,Done,2026-08-31,2026-09-13,false,Mobile story 3 for sprint 5
+QAC-52,QAC,gamma,QAC-SPR-05,Story,Low,Open,2026-08-31,,false,Mobile story 4 for sprint 5
+QAC-53,QAC,gamma,QAC-SPR-05,Story,Low,Open,2026-08-31,,false,Mobile story 5 for sprint 5
+QAC-54,QAC,gamma,QAC-SPR-05,Story,High,In Progress,2026-08-31,,false,Mobile story 6 for sprint 5
+QAC-55,QAC,gamma,QAC-SPR-05,Story,Low,Done,2026-08-31,2026-09-13,false,Mobile story 7 for sprint 5
+QAC-56,QAC,gamma,QAC-SPR-05,Story,High,In Progress,2026-08-31,,false,Mobile story 8 for sprint 5
+QAC-57,QAC,gamma,QAC-SPR-05,Story,High,Done,2026-08-31,2026-09-13,false,Mobile story 9 for sprint 5
+QAC-58,QAC,gamma,QAC-SPR-05,Story,High,Done,2026-08-31,2026-09-13,false,Mobile story 10 for sprint 5
+QAC-59,QAC,gamma,QAC-SPR-05,Story,Medium,Done,2026-08-31,2026-09-13,false,Mobile story 11 for sprint 5
+QAC-60,QAC,gamma,QAC-SPR-05,Story,High,Open,2026-08-31,,false,Mobile story 12 for sprint 5
+QAC-61,QAC,gamma,QAC-SPR-06,Story,Medium,Done,2026-09-14,2026-09-27,false,Mobile story 1 for sprint 6
+QAC-62,QAC,gamma,QAC-SPR-06,Story,High,Done,2026-09-14,2026-09-27,false,Mobile story 2 for sprint 6
+QAC-63,QAC,gamma,QAC-SPR-06,Story,Low,Open,2026-09-14,,false,Mobile story 3 for sprint 6
+QAC-64,QAC,gamma,QAC-SPR-06,Story,High,In Progress,2026-09-14,,false,Mobile story 4 for sprint 6
+QAC-65,QAC,gamma,QAC-SPR-06,Story,High,Open,2026-09-14,,false,Mobile story 5 for sprint 6
+QAC-66,QAC,gamma,QAC-SPR-06,Story,Medium,Done,2026-09-14,2026-09-27,false,Mobile story 6 for sprint 6
+QAC-67,QAC,gamma,QAC-SPR-06,Story,Medium,Done,2026-09-14,2026-09-27,false,Mobile story 7 for sprint 6
+QAC-68,QAC,gamma,QAC-SPR-06,Story,Low,Open,2026-09-14,,false,Mobile story 8 for sprint 6
+QAC-69,QAC,gamma,QAC-SPR-06,Story,Low,Open,2026-09-14,,false,Mobile story 9 for sprint 6
+QAC-70,QAC,gamma,QAC-SPR-06,Story,Medium,In Progress,2026-09-14,,false,Mobile story 10 for sprint 6
+QAC-71,QAC,gamma,QAC-SPR-06,Story,Low,Open,2026-09-14,,false,Mobile story 11 for sprint 6
+QAC-72,QAC,gamma,QAC-SPR-06,Story,Medium,Open,2026-09-14,,false,Mobile story 12 for sprint 6
+QAD-1,QAD,delta,QAD-SPR-01,Story,High,Open,2026-07-06,,false,Backend APIs story 1 for sprint 1
+QAD-2,QAD,delta,QAD-SPR-01,Story,Medium,In Progress,2026-07-06,,false,Backend APIs story 2 for sprint 1
+QAD-3,QAD,delta,QAD-SPR-01,Story,Low,Done,2026-07-06,2026-07-19,false,Backend APIs story 3 for sprint 1
+QAD-4,QAD,delta,QAD-SPR-01,Story,High,In Progress,2026-07-06,,false,Backend APIs story 4 for sprint 1
+QAD-5,QAD,delta,QAD-SPR-01,Story,Medium,In Progress,2026-07-06,,false,Backend APIs story 5 for sprint 1
+QAD-6,QAD,delta,QAD-SPR-01,Story,Low,In Progress,2026-07-06,,false,Backend APIs story 6 for sprint 1
+QAD-7,QAD,delta,QAD-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Backend APIs story 7 for sprint 1
+QAD-8,QAD,delta,QAD-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Backend APIs story 8 for sprint 1
+QAD-9,QAD,delta,QAD-SPR-01,Story,Low,In Progress,2026-07-06,,false,Backend APIs story 9 for sprint 1
+QAD-10,QAD,delta,QAD-SPR-01,Story,Low,Done,2026-07-06,2026-07-19,false,Backend APIs story 10 for sprint 1
+QAD-11,QAD,delta,QAD-SPR-01,Story,High,Done,2026-07-06,2026-07-19,false,Backend APIs story 11 for sprint 1
+QAD-12,QAD,delta,QAD-SPR-01,Story,Medium,In Progress,2026-07-06,,false,Backend APIs story 12 for sprint 1
+QAD-13,QAD,delta,QAD-SPR-02,Bug,Critical,Open,2026-07-20,,true,Backend APIs bug 1 for sprint 2
+QAD-14,QAD,delta,QAD-SPR-02,Story,High,In Progress,2026-07-20,,false,Backend APIs story 2 for sprint 2
+QAD-15,QAD,delta,QAD-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Backend APIs story 3 for sprint 2
+QAD-16,QAD,delta,QAD-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Backend APIs story 4 for sprint 2
+QAD-17,QAD,delta,QAD-SPR-02,Story,Low,Open,2026-07-20,,false,Backend APIs story 5 for sprint 2
+QAD-18,QAD,delta,QAD-SPR-02,Story,Low,Open,2026-07-20,,false,Backend APIs story 6 for sprint 2
+QAD-19,QAD,delta,QAD-SPR-02,Story,High,Open,2026-07-20,,false,Backend APIs story 7 for sprint 2
+QAD-20,QAD,delta,QAD-SPR-02,Story,High,In Progress,2026-07-20,,false,Backend APIs story 8 for sprint 2
+QAD-21,QAD,delta,QAD-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Backend APIs story 9 for sprint 2
+QAD-22,QAD,delta,QAD-SPR-02,Story,High,In Progress,2026-07-20,,false,Backend APIs story 10 for sprint 2
+QAD-23,QAD,delta,QAD-SPR-02,Story,Medium,In Progress,2026-07-20,,false,Backend APIs story 11 for sprint 2
+QAD-24,QAD,delta,QAD-SPR-02,Story,Low,Open,2026-07-20,,false,Backend APIs story 12 for sprint 2
+QAD-25,QAD,delta,QAD-SPR-03,Story,High,In Progress,2026-08-03,,false,Backend APIs story 1 for sprint 3
+QAD-26,QAD,delta,QAD-SPR-03,Story,High,In Progress,2026-08-03,,false,Backend APIs story 2 for sprint 3
+QAD-27,QAD,delta,QAD-SPR-03,Story,Medium,Done,2026-08-03,2026-08-16,false,Backend APIs story 3 for sprint 3
+QAD-28,QAD,delta,QAD-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Backend APIs story 4 for sprint 3
+QAD-29,QAD,delta,QAD-SPR-03,Story,Medium,Done,2026-08-03,2026-08-16,false,Backend APIs story 5 for sprint 3
+QAD-30,QAD,delta,QAD-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Backend APIs story 6 for sprint 3
+QAD-31,QAD,delta,QAD-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Backend APIs story 7 for sprint 3
+QAD-32,QAD,delta,QAD-SPR-03,Story,Medium,In Progress,2026-08-03,,false,Backend APIs story 8 for sprint 3
+QAD-33,QAD,delta,QAD-SPR-03,Story,Medium,Done,2026-08-03,2026-08-16,false,Backend APIs story 9 for sprint 3
+QAD-34,QAD,delta,QAD-SPR-03,Story,Low,Done,2026-08-03,2026-08-16,false,Backend APIs story 10 for sprint 3
+QAD-35,QAD,delta,QAD-SPR-03,Story,High,Open,2026-08-03,,false,Backend APIs story 11 for sprint 3
+QAD-36,QAD,delta,QAD-SPR-03,Story,High,In Progress,2026-08-03,,false,Backend APIs story 12 for sprint 3
+QAD-37,QAD,delta,QAD-SPR-04,Story,High,Open,2026-08-17,,false,Backend APIs story 1 for sprint 4
+QAD-38,QAD,delta,QAD-SPR-04,Story,Low,In Progress,2026-08-17,,false,Backend APIs story 2 for sprint 4
+QAD-39,QAD,delta,QAD-SPR-04,Story,Medium,In Progress,2026-08-17,,false,Backend APIs story 3 for sprint 4
+QAD-40,QAD,delta,QAD-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Backend APIs story 4 for sprint 4
+QAD-41,QAD,delta,QAD-SPR-04,Story,Low,Open,2026-08-17,,false,Backend APIs story 5 for sprint 4
+QAD-42,QAD,delta,QAD-SPR-04,Story,High,Open,2026-08-17,,false,Backend APIs story 6 for sprint 4
+QAD-43,QAD,delta,QAD-SPR-04,Story,Medium,Done,2026-08-17,2026-08-30,false,Backend APIs story 7 for sprint 4
+QAD-44,QAD,delta,QAD-SPR-04,Story,Low,Done,2026-08-17,2026-08-30,false,Backend APIs story 8 for sprint 4
+QAD-45,QAD,delta,QAD-SPR-04,Story,Medium,Done,2026-08-17,2026-08-30,false,Backend APIs story 9 for sprint 4
+QAD-46,QAD,delta,QAD-SPR-04,Story,Low,Open,2026-08-17,,false,Backend APIs story 10 for sprint 4
+QAD-47,QAD,delta,QAD-SPR-04,Story,Medium,In Progress,2026-08-17,,false,Backend APIs story 11 for sprint 4
+QAD-48,QAD,delta,QAD-SPR-04,Story,High,Open,2026-08-17,,false,Backend APIs story 12 for sprint 4
+QAD-49,QAD,delta,QAD-SPR-05,Bug,Medium,Done,2026-08-31,2026-09-13,false,Backend APIs bug 1 for sprint 5
+QAD-50,QAD,delta,QAD-SPR-05,Story,Medium,Open,2026-08-31,,false,Backend APIs story 2 for sprint 5
+QAD-51,QAD,delta,QAD-SPR-05,Story,Medium,Open,2026-08-31,,false,Backend APIs story 3 for sprint 5
+QAD-52,QAD,delta,QAD-SPR-05,Story,Low,Done,2026-08-31,2026-09-13,false,Backend APIs story 4 for sprint 5
+QAD-53,QAD,delta,QAD-SPR-05,Story,Medium,Open,2026-08-31,,false,Backend APIs story 5 for sprint 5
+QAD-54,QAD,delta,QAD-SPR-05,Story,Medium,Done,2026-08-31,2026-09-13,false,Backend APIs story 6 for sprint 5
+QAD-55,QAD,delta,QAD-SPR-05,Story,High,In Progress,2026-08-31,,false,Backend APIs story 7 for sprint 5
+QAD-56,QAD,delta,QAD-SPR-05,Story,Medium,In Progress,2026-08-31,,false,Backend APIs story 8 for sprint 5
+QAD-57,QAD,delta,QAD-SPR-05,Story,Medium,Open,2026-08-31,,false,Backend APIs story 9 for sprint 5
+QAD-58,QAD,delta,QAD-SPR-05,Story,High,Open,2026-08-31,,false,Backend APIs story 10 for sprint 5
+QAD-59,QAD,delta,QAD-SPR-05,Story,High,In Progress,2026-08-31,,false,Backend APIs story 11 for sprint 5
+QAD-60,QAD,delta,QAD-SPR-05,Story,Low,Open,2026-08-31,,false,Backend APIs story 12 for sprint 5
+QAD-61,QAD,delta,QAD-SPR-06,Story,Medium,Done,2026-09-14,2026-09-27,false,Backend APIs story 1 for sprint 6
+QAD-62,QAD,delta,QAD-SPR-06,Story,High,In Progress,2026-09-14,,false,Backend APIs story 2 for sprint 6
+QAD-63,QAD,delta,QAD-SPR-06,Story,Low,In Progress,2026-09-14,,false,Backend APIs story 3 for sprint 6
+QAD-64,QAD,delta,QAD-SPR-06,Story,Low,Open,2026-09-14,,false,Backend APIs story 4 for sprint 6
+QAD-65,QAD,delta,QAD-SPR-06,Story,Medium,In Progress,2026-09-14,,false,Backend APIs story 5 for sprint 6
+QAD-66,QAD,delta,QAD-SPR-06,Story,Medium,Done,2026-09-14,2026-09-27,false,Backend APIs story 6 for sprint 6
+QAD-67,QAD,delta,QAD-SPR-06,Story,High,In Progress,2026-09-14,,false,Backend APIs story 7 for sprint 6
+QAD-68,QAD,delta,QAD-SPR-06,Story,High,In Progress,2026-09-14,,false,Backend APIs story 8 for sprint 6
+QAD-69,QAD,delta,QAD-SPR-06,Story,Medium,In Progress,2026-09-14,,false,Backend APIs story 9 for sprint 6
+QAD-70,QAD,delta,QAD-SPR-06,Story,Medium,In Progress,2026-09-14,,false,Backend APIs story 10 for sprint 6
+QAD-71,QAD,delta,QAD-SPR-06,Story,Low,Open,2026-09-14,,false,Backend APIs story 11 for sprint 6
+QAD-72,QAD,delta,QAD-SPR-06,Story,Low,In Progress,2026-09-14,,false,Backend APIs story 12 for sprint 6

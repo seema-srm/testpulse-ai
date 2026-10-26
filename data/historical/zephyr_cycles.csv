@@ -1,0 +1,25 @@
+cycle_id,project_key,sprint_id,name
+QAA-CYC-01,QAA,QAA-SPR-01,Sprint 1 regression
+QAA-CYC-02,QAA,QAA-SPR-02,Sprint 2 regression
+QAA-CYC-03,QAA,QAA-SPR-03,Sprint 3 regression
+QAA-CYC-04,QAA,QAA-SPR-04,Sprint 4 regression
+QAA-CYC-05,QAA,QAA-SPR-05,Sprint 5 regression
+QAA-CYC-06,QAA,QAA-SPR-06,Sprint 6 regression
+QAB-CYC-01,QAB,QAB-SPR-01,Sprint 1 regression
+QAB-CYC-02,QAB,QAB-SPR-02,Sprint 2 regression
+QAB-CYC-03,QAB,QAB-SPR-03,Sprint 3 regression
+QAB-CYC-04,QAB,QAB-SPR-04,Sprint 4 regression
+QAB-CYC-05,QAB,QAB-SPR-05,Sprint 5 regression
+QAB-CYC-06,QAB,QAB-SPR-06,Sprint 6 regression
+QAC-CYC-01,QAC,QAC-SPR-01,Sprint 1 regression
+QAC-CYC-02,QAC,QAC-SPR-02,Sprint 2 regression
+QAC-CYC-03,QAC,QAC-SPR-03,Sprint 3 regression
+QAC-CYC-04,QAC,QAC-SPR-04,Sprint 4 regression
+QAC-CYC-05,QAC,QAC-SPR-05,Sprint 5 regression
+QAC-CYC-06,QAC,QAC-SPR-06,Sprint 6 regression
+QAD-CYC-01,QAD,QAD-SPR-01,Sprint 1 regression
+QAD-CYC-02,QAD,QAD-SPR-02,Sprint 2 regression
+QAD-CYC-03,QAD,QAD-SPR-03,Sprint 3 regression
+QAD-CYC-04,QAD,QAD-SPR-04,Sprint 4 regression
+QAD-CYC-05,QAD,QAD-SPR-05,Sprint 5 regression
+QAD-CYC-06,QAD,QAD-SPR-06,Sprint 6 regression

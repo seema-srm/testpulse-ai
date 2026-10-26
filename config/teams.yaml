@@ -1,0 +1,5 @@
+teams:
+  - {id: alpha, name: Team Alpha, project_key: QAA, domain: Payments}
+  - {id: beta, name: Team Beta, project_key: QAB, domain: Checkout}
+  - {id: gamma, name: Team Gamma, project_key: QAC, domain: Mobile}
+  - {id: delta, name: Team Delta, project_key: QAD, domain: Backend APIs}

@@ -1,0 +1,25 @@
+team_id,project_key,sprint_id,sprint_number,start_date,end_date,goal
+alpha,QAA,QAA-SPR-01,1,2026-07-06,2026-07-19,Payments sprint 1 quality validation
+alpha,QAA,QAA-SPR-02,2,2026-07-20,2026-08-02,Payments sprint 2 quality validation
+alpha,QAA,QAA-SPR-03,3,2026-08-03,2026-08-16,Payments sprint 3 quality validation
+alpha,QAA,QAA-SPR-04,4,2026-08-17,2026-08-30,Payments sprint 4 quality validation
+alpha,QAA,QAA-SPR-05,5,2026-08-31,2026-09-13,Payments sprint 5 quality validation
+alpha,QAA,QAA-SPR-06,6,2026-09-14,2026-09-27,Payments sprint 6 quality validation
+beta,QAB,QAB-SPR-01,1,2026-07-06,2026-07-19,Checkout sprint 1 quality validation
+beta,QAB,QAB-SPR-02,2,2026-07-20,2026-08-02,Checkout sprint 2 quality validation
+beta,QAB,QAB-SPR-03,3,2026-08-03,2026-08-16,Checkout sprint 3 quality validation
+beta,QAB,QAB-SPR-04,4,2026-08-17,2026-08-30,Checkout sprint 4 quality validation
+beta,QAB,QAB-SPR-05,5,2026-08-31,2026-09-13,Checkout sprint 5 quality validation
+beta,QAB,QAB-SPR-06,6,2026-09-14,2026-09-27,Checkout sprint 6 quality validation
+gamma,QAC,QAC-SPR-01,1,2026-07-06,2026-07-19,Mobile sprint 1 quality validation
+gamma,QAC,QAC-SPR-02,2,2026-07-20,2026-08-02,Mobile sprint 2 quality validation
+gamma,QAC,QAC-SPR-03,3,2026-08-03,2026-08-16,Mobile sprint 3 quality validation
+gamma,QAC,QAC-SPR-04,4,2026-08-17,2026-08-30,Mobile sprint 4 quality validation
+gamma,QAC,QAC-SPR-05,5,2026-08-31,2026-09-13,Mobile sprint 5 quality validation
+gamma,QAC,QAC-SPR-06,6,2026-09-14,2026-09-27,Mobile sprint 6 quality validation
+delta,QAD,QAD-SPR-01,1,2026-07-06,2026-07-19,Backend APIs sprint 1 quality validation
+delta,QAD,QAD-SPR-02,2,2026-07-20,2026-08-02,Backend APIs sprint 2 quality validation
+delta,QAD,QAD-SPR-03,3,2026-08-03,2026-08-16,Backend APIs sprint 3 quality validation
+delta,QAD,QAD-SPR-04,4,2026-08-17,2026-08-30,Backend APIs sprint 4 quality validation
+delta,QAD,QAD-SPR-05,5,2026-08-31,2026-09-13,Backend APIs sprint 5 quality validation
+delta,QAD,QAD-SPR-06,6,2026-09-14,2026-09-27,Backend APIs sprint 6 quality validation

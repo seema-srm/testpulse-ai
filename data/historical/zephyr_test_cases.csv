@@ -1,0 +1,61 @@
+test_id,project_key,team_id,title
+QAA-TC-001,QAA,alpha,Payments regression scenario 1
+QAA-TC-002,QAA,alpha,Payments regression scenario 2
+QAA-TC-003,QAA,alpha,Payments regression scenario 3
+QAA-TC-004,QAA,alpha,Payments regression scenario 4
+QAA-TC-005,QAA,alpha,Payments regression scenario 5
+QAA-TC-006,QAA,alpha,Payments regression scenario 6
+QAA-TC-007,QAA,alpha,Payments regression scenario 7
+QAA-TC-008,QAA,alpha,Payments regression scenario 8
+QAA-TC-009,QAA,alpha,Payments regression scenario 9
+QAA-TC-010,QAA,alpha,Payments regression scenario 10
+QAA-TC-011,QAA,alpha,Payments regression scenario 11
+QAA-TC-012,QAA,alpha,Payments regression scenario 12
+QAA-TC-013,QAA,alpha,Payments regression scenario 13
+QAA-TC-014,QAA,alpha,Payments regression scenario 14
+QAA-TC-015,QAA,alpha,Payments regression scenario 15
+QAB-TC-001,QAB,beta,Checkout regression scenario 1
+QAB-TC-002,QAB,beta,Checkout regression scenario 2
+QAB-TC-003,QAB,beta,Checkout regression scenario 3
+QAB-TC-004,QAB,beta,Checkout regression scenario 4
+QAB-TC-005,QAB,beta,Checkout regression scenario 5
+QAB-TC-006,QAB,beta,Checkout regression scenario 6
+QAB-TC-007,QAB,beta,Checkout regression scenario 7
+QAB-TC-008,QAB,beta,Checkout regression scenario 8
+QAB-TC-009,QAB,beta,Checkout regression scenario 9
+QAB-TC-010,QAB,beta,Checkout regression scenario 10
+QAB-TC-011,QAB,beta,Checkout regression scenario 11
+QAB-TC-012,QAB,beta,Checkout regression scenario 12
+QAB-TC-013,QAB,beta,Checkout regression scenario 13
+QAB-TC-014,QAB,beta,Checkout regression scenario 14
+QAB-TC-015,QAB,beta,Checkout regression scenario 15
+QAC-TC-001,QAC,gamma,Mobile regression scenario 1
+QAC-TC-002,QAC,gamma,Mobile regression scenario 2
+QAC-TC-003,QAC,gamma,Mobile regression scenario 3
+QAC-TC-004,QAC,gamma,Mobile regression scenario 4
+QAC-TC-005,QAC,gamma,Mobile regression scenario 5
+QAC-TC-006,QAC,gamma,Mobile regression scenario 6
+QAC-TC-007,QAC,gamma,Mobile regression scenario 7
+QAC-TC-008,QAC,gamma,Mobile regression scenario 8
+QAC-TC-009,QAC,gamma,Mobile regression scenario 9
+QAC-TC-010,QAC,gamma,Mobile regression scenario 10
+QAC-TC-011,QAC,gamma,Mobile regression scenario 11
+QAC-TC-012,QAC,gamma,Mobile regression scenario 12
+QAC-TC-013,QAC,gamma,Mobile regression scenario 13
+QAC-TC-014,QAC,gamma,Mobile regression scenario 14
+QAC-TC-015,QAC,gamma,Mobile regression scenario 15
+QAD-TC-001,QAD,delta,Backend APIs regression scenario 1
+QAD-TC-002,QAD,delta,Backend APIs regression scenario 2
+QAD-TC-003,QAD,delta,Backend APIs regression scenario 3
+QAD-TC-004,QAD,delta,Backend APIs regression scenario 4
+QAD-TC-005,QAD,delta,Backend APIs regression scenario 5
+QAD-TC-006,QAD,delta,Backend APIs regression scenario 6
+QAD-TC-007,QAD,delta,Backend APIs regression scenario 7
+QAD-TC-008,QAD,delta,Backend APIs regression scenario 8
+QAD-TC-009,QAD,delta,Backend APIs regression scenario 9
+QAD-TC-010,QAD,delta,Backend APIs regression scenario 10
+QAD-TC-011,QAD,delta,Backend APIs regression scenario 11
+QAD-TC-012,QAD,delta,Backend APIs regression scenario 12
+QAD-TC-013,QAD,delta,Backend APIs regression scenario 13
+QAD-TC-014,QAD,delta,Backend APIs regression scenario 14
+QAD-TC-015,QAD,delta,Backend APIs regression scenario 15

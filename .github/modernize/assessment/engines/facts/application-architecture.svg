@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100" role="img" aria-labelledby="title description">
+  <title id="title">TestPulse AI application architecture</title>
+  <desc id="description">Users interact with the Streamlit dashboard. Application logic loads synthetic files, replays events, calculates metrics, writes simulations, stores weekly reports locally, and requests structured AI findings from a local Ollama model.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#0F766E"/>
+    </marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; fill: #17324D; }
+      .title { font-size: 40px; font-weight: 700; }
+      .subtitle { font-size: 21px; fill: #475569; }
+      .layer { font-size: 24px; font-weight: 700; fill: #0F766E; }
+      .node { font-size: 22px; font-weight: 600; }
+      .detail { font-size: 18px; fill: #475569; }
+      .group { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 2; }
+      .ui { fill: #EFF6FF; stroke: #2563EB; stroke-width: 2; }
+      .logic { fill: #F0FDFA; stroke: #0F766E; stroke-width: 2; }
+      .store { fill: #F8FAFC; stroke: #64748B; stroke-width: 2; }
+      .model { fill: #F5F3FF; stroke: #7C3AED; stroke-width: 2; }
+      .arrow { fill: none; stroke: #0F766E; stroke-width: 3; marker-end: url(#arrow); }
+      .dashed { fill: none; stroke: #7C3AED; stroke-width: 3; stroke-dasharray: 9 8; marker-end: url(#arrow); }
+      .edge-label { font-size: 17px; font-weight: 600; fill: #475569; }
+    </style>
+  </defs>
+  <rect width="1800" height="1100" fill="#F8FAFC"/>
+  <text x="65" y="75" class="title">TestPulse AI - Application Architecture</text>
+  <text x="65" y="115" class="subtitle">Local-first dashboard: synthetic records, replayable simulations, weekly memory, and local AI analysis.</text>
+
+  <rect x="65" y="160" width="325" height="790" rx="20" class="group"/>
+  <text x="95" y="207" class="layer">User</text>
+  <rect x="100" y="260" width="255" height="120" rx="16" class="ui"/>
+  <text x="227" y="310" text-anchor="middle" class="node">Browser</text>
+  <text x="227" y="345" text-anchor="middle" class="detail">Dashboard user</text>
+
+  <rect x="435" y="160" width="350" height="790" rx="20" class="group"/>
+  <text x="465" y="207" class="layer">Presentation</text>
+  <rect x="475" y="260" width="270" height="155" rx="16" class="ui"/>
+  <text x="610" y="310" text-anchor="middle" class="node">Streamlit</text>
+  <text x="610" y="345" text-anchor="middle" class="detail">Executive, team, AI,</text>
+  <text x="610" y="372" text-anchor="middle" class="detail">weekly report, simulation</text>
+  <rect x="475" y="475" width="270" height="120" rx="16" class="ui"/>
+  <text x="610" y="525" text-anchor="middle" class="node">Plotly and tables</text>
+  <text x="610" y="560" text-anchor="middle" class="detail">Charts and status styles</text>
+  <rect x="475" y="660" width="270" height="120" rx="16" class="ui"/>
+  <text x="610" y="710" text-anchor="middle" class="node">Report downloads</text>
+  <text x="610" y="745" text-anchor="middle" class="detail">Markdown and Excel</text>
+
+  <rect x="830" y="160" width="410" height="790" rx="20" class="group"/>
+  <text x="860" y="207" class="layer">Application logic</text>
+  <rect x="870" y="250" width="330" height="125" rx="16" class="logic"/>
+  <text x="1035" y="298" text-anchor="middle" class="node">Dashboard data</text>
+  <text x="1035" y="333" text-anchor="middle" class="detail">Replay events and calculate metrics</text>
+  <rect x="870" y="420" width="330" height="115" rx="16" class="logic"/>
+  <text x="1035" y="467" text-anchor="middle" class="node">Simulation writer</text>
+  <text x="1035" y="502" text-anchor="middle" class="detail">Validate and append status changes</text>
+  <rect x="870" y="580" width="330" height="115" rx="16" class="logic"/>
+  <text x="1035" y="627" text-anchor="middle" class="node">Weekly status memory</text>
+  <text x="1035" y="662" text-anchor="middle" class="detail">Build reports and save snapshots</text>
+  <rect x="870" y="740" width="330" height="150" rx="16" class="logic"/>
+  <text x="1035" y="790" text-anchor="middle" class="node">LangGraph analysis</text>
+  <text x="1035" y="825" text-anchor="middle" class="detail">Evidence checks and factual summary</text>
+  <text x="1035" y="854" text-anchor="middle" class="detail">Findings come from local model</text>
+
+  <rect x="1285" y="160" width="450" height="490" rx="20" class="group"/>
+  <text x="1315" y="207" class="layer">Local files</text>
+  <rect x="1325" y="250" width="365" height="95" rx="16" class="store"/>
+  <text x="1507" y="290" text-anchor="middle" class="node">Historical CSV baselines</text>
+  <text x="1507" y="320" text-anchor="middle" class="detail">Read-only synthetic records</text>
+  <rect x="1325" y="370" width="365" height="95" rx="16" class="store"/>
+  <text x="1507" y="410" text-anchor="middle" class="node">Simulation event log</text>
+  <text x="1507" y="440" text-anchor="middle" class="detail">Append-only JSONL</text>
+  <rect x="1325" y="490" width="365" height="95" rx="16" class="store"/>
+  <text x="1507" y="530" text-anchor="middle" class="node">Team YAML and SQLite</text>
+  <text x="1507" y="560" text-anchor="middle" class="detail">Config and weekly snapshots</text>
+
+  <rect x="1285" y="700" width="450" height="250" rx="20" class="group"/>
+  <text x="1315" y="747" class="layer">Local model service</text>
+  <rect x="1325" y="790" width="365" height="105" rx="16" class="model"/>
+  <text x="1507" y="833" text-anchor="middle" class="node">Ollama llama3.1:8b</text>
+  <text x="1507" y="865" text-anchor="middle" class="detail">Returns findings; no tools or data writes</text>
+
+  <path d="M355 320 H460" class="arrow"/>
+  <text x="405" y="300" text-anchor="middle" class="edge-label">use app</text>
+  <path d="M745 310 H855" class="arrow"/>
+  <text x="800" y="290" text-anchor="middle" class="edge-label">metrics</text>
+  <path d="M1035 375 V405" class="arrow"/>
+  <path d="M1200 300 H1310" class="arrow"/>
+  <text x="1255" y="280" text-anchor="middle" class="edge-label">read data</text>
+  <path d="M1200 475 H1310" class="arrow"/>
+  <text x="1255" y="455" text-anchor="middle" class="edge-label">append event</text>
+  <path d="M1200 635 H1310" class="arrow"/>
+  <text x="1255" y="615" text-anchor="middle" class="edge-label">save report</text>
+  <path d="M1200 805 H1310" class="dashed"/>
+  <text x="1255" y="785" text-anchor="middle" class="edge-label">local request</text>
+  <path d="M1310 858 H1215" class="dashed"/>
+  <text x="1260" y="887" text-anchor="middle" class="edge-label">findings</text>
+
+  <rect x="435" y="885" width="805" height="44" rx="12" fill="#ECFDF5"/>
+  <text x="455" y="913" class="detail">Simulation changes affect replayed views; historical baseline files are preserved.</text>
+</svg>

@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.streamlit/secrets.toml
+data/simulations/*.jsonl
+!data/simulations/events.jsonl
+data/demo/simulations/*.jsonl
+data/status_memory.sqlite3

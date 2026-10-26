@@ -1,0 +1,7 @@
+source_issue,affected_project,observed_sprint,dependency_type
+QAB-900,QAB,QAB-SPR-02,carryover
+QAB-900,QAB,QAB-SPR-03,carryover
+QAB-900,QAB,QAB-SPR-04,carryover
+QAB-900,QAB,QAB-SPR-05,carryover
+QAB-900,QAB,QAB-SPR-06,carryover
+QAD-37,QAB,QAB-SPR-04,cross_team

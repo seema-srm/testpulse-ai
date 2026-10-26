@@ -1,0 +1,32 @@
+{"event_id": 1, "issue_key": "QAB-900", "project_key": "QAB", "previous_baseline_status": "Open", "new_status": "Done", "note": "Payment defect fixed and verified", "event_date": "2026-10-23"}
+{"event_id": 2, "target_type": "issue", "target_id": "QAB-1", "previous_status": "Open", "new_status": "Done", "note": "Manual dashboard simulation", "event_date": "2026-10-24"}
+{"event_id": 3, "target_type": "execution", "target_id": "QAA-CYC-01-EX-002", "previous_status": "PASS", "new_status": "FAIL", "note": "Manual dashboard simulation", "event_date": "2026-10-24"}
+{"event_id": 4, "target_type": "execution", "target_id": "QAA-CYC-01-EX-003", "previous_status": "PASS", "new_status": "FAIL", "note": "Manual dashboard simulation", "event_date": "2026-10-24"}
+{"event_id": 5, "target_type": "issue", "target_id": "QAB-1", "previous_status": "Done", "new_status": "Open", "note": "Manual dashboard simulation", "event_date": "2026-10-24"}
+{"event_id": 6, "target_type": "issue", "target_id": "QAC-1", "previous_status": "Open", "new_status": "In Progress", "note": "Manual dashboard simulation", "event_date": "2026-10-25"}
+{"event_id": 7, "target_type": "execution", "target_id": "QAA-CYC-01-EX-001", "previous_status": "PASS", "new_status": "FAIL", "note": "Manual dashboard simulation", "event_date": "2026-10-25"}
+{"event_id": 8, "target_type": "issue", "target_id": "QAB-1", "previous_status": "Open", "new_status": "Done", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 9, "target_type": "issue", "target_id": "QAB-13", "previous_status": "Open", "new_status": "Done", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 10, "target_type": "issue", "target_id": "QAB-25", "previous_status": "Open", "new_status": "Done", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 11, "target_type": "issue", "target_id": "QAB-37", "previous_status": "Open", "new_status": "Done", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 12, "target_type": "issue", "target_id": "QAB-49", "previous_status": "Open", "new_status": "Done", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 13, "target_type": "issue", "target_id": "QAB-61", "previous_status": "Open", "new_status": "Done", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 14, "target_type": "execution", "target_id": "QAB-CYC-01-EX-001", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 15, "target_type": "execution", "target_id": "QAB-CYC-01-EX-002", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 16, "target_type": "execution", "target_id": "QAB-CYC-01-EX-011", "previous_status": "FAIL", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 17, "target_type": "execution", "target_id": "QAB-CYC-02-EX-005", "previous_status": "FAIL", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 18, "target_type": "execution", "target_id": "QAB-CYC-02-EX-008", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 19, "target_type": "execution", "target_id": "QAB-CYC-02-EX-015", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 20, "target_type": "execution", "target_id": "QAB-CYC-03-EX-001", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 21, "target_type": "execution", "target_id": "QAB-CYC-03-EX-011", "previous_status": "FAIL", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 22, "target_type": "execution", "target_id": "QAB-CYC-03-EX-013", "previous_status": "FAIL", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 23, "target_type": "execution", "target_id": "QAB-CYC-03-EX-015", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 24, "target_type": "execution", "target_id": "QAB-CYC-04-EX-001", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 25, "target_type": "execution", "target_id": "QAB-CYC-04-EX-005", "previous_status": "FAIL", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 26, "target_type": "execution", "target_id": "QAB-CYC-04-EX-006", "previous_status": "FAIL", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 27, "target_type": "execution", "target_id": "QAB-CYC-04-EX-008", "previous_status": "FAIL", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 28, "target_type": "execution", "target_id": "QAB-CYC-04-EX-013", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 29, "target_type": "execution", "target_id": "QAB-CYC-04-EX-014", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 30, "target_type": "execution", "target_id": "QAB-CYC-05-EX-001", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 31, "target_type": "execution", "target_id": "QAB-CYC-05-EX-004", "previous_status": "FAIL", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
+{"event_id": 32, "target_type": "execution", "target_id": "QAB-CYC-05-EX-008", "previous_status": "BLOCKED", "new_status": "PASS", "note": "Synthetic Team Beta release-readiness demo", "event_date": "2026-10-25"}
