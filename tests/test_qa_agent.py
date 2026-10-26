@@ -26,10 +26,12 @@ class FakeStructuredModel:
         self.response = response
         self.error = error
         self.schema = None
+        self.structured_output_method = None
         self.request = None
 
-    def with_structured_output(self, schema):
+    def with_structured_output(self, schema, **kwargs):
         self.schema = schema
+        self.structured_output_method = kwargs.get("method")
         return self
 
     def invoke(self, messages):
@@ -65,6 +67,7 @@ def test_portfolio_graph_returns_structured_grounded_analysis(project_files):
 
     assert isinstance(result, PortfolioAnalysis)
     assert model.schema is PortfolioFindings
+    assert model.structured_output_method == "json_schema"
     assert "summary" not in model.schema.model_fields
     assert result.findings[0].team_id == "alpha"
     assert model.request["portfolio_facts"][0]["team_id"] == "alpha"

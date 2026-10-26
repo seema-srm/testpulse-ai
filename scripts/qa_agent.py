@@ -102,7 +102,8 @@ records. Do not invent measurements, team IDs, sprint IDs, or causes. Every
 finding must cite one or more supplied evidence reference IDs for its team.
 Explain what the metrics indicate and provide practical suggestions for a
 human to review. You have no tools, no permission to change data, and must not
-claim to have made changes. Return only the required structured response."""
+claim to have made changes. Return only a JSON object matching the supplied
+schema, with a top-level "findings" array."""
 
 
 def _as_float(value: Any) -> float:
@@ -256,7 +257,10 @@ def create_fireworks_model(api_key: str | None = None):
 
 def build_portfolio_analysis_graph(model):
     """Create the analyze and evidence-validation LangGraph workflow."""
-    structured_model = model.with_structured_output(PortfolioFindings)
+    structured_model = model.with_structured_output(
+        PortfolioFindings,
+        method="json_schema",
+    )
 
     def analyze_node(state: AnalysisState) -> AnalysisState:
         request = {
