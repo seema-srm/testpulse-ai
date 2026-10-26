@@ -1,4 +1,4 @@
-# TestPulse AI
+# TestPulse AI | QA Portfolio
 Synthetic Jira- and Zephyr Squad-style QA data and an interactive dashboard for four teams across sprints.
 
 Run `python scripts/generate_data.py generate --seed 42` to create a reproducible baseline.
