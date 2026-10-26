@@ -2,21 +2,22 @@ import json
 from copy import deepcopy
 
 import httpx
-import ollama
 import pandas as pd
 import pytest
 from pydantic import ValidationError
 
 from scripts.qa_agent import (
+    DEFAULT_FIREWORKS_MODEL,
     PortfolioAnalysis,
     PortfolioFindings,
     QAAgentConfigurationError,
     QAAgentUnavailableError,
     QAAgentValidationError,
-    _check_local_ollama_url,
+    create_fireworks_model,
+    fireworks_ai_enabled,
+    get_fireworks_api_key,
     prepare_portfolio_facts,
     run_portfolio_analysis,
-    local_ollama_enabled,
 )
 
 
@@ -70,18 +71,49 @@ def test_portfolio_graph_returns_structured_grounded_analysis(project_files):
     assert "available_evidence" in model.request
 
 
-def test_hosted_demo_can_disable_local_ollama():
-    assert local_ollama_enabled({}) is True
-    assert local_ollama_enabled(
-        {"testpulse": {"enable_local_ai": False}}
+def test_hosted_demo_can_disable_fireworks_ai():
+    assert fireworks_ai_enabled({}) is True
+    assert fireworks_ai_enabled(
+        {"testpulse": {"enable_fireworks_ai": False}}
     ) is False
 
 
-def test_local_ollama_setting_must_be_boolean():
+def test_fireworks_setting_must_be_boolean():
     with pytest.raises(QAAgentConfigurationError, match="must be true or false"):
-        local_ollama_enabled(
-            {"testpulse": {"enable_local_ai": "false"}}
+        fireworks_ai_enabled(
+            {"testpulse": {"enable_fireworks_ai": "false"}}
         )
+
+
+def test_fireworks_api_key_reads_streamlit_secret_and_environment(monkeypatch):
+    monkeypatch.setenv("FIREWORKS_API_KEY", "environment-key")
+    assert get_fireworks_api_key({"FIREWORKS_API_KEY": "secret-key"}) == (
+        "secret-key"
+    )
+    assert get_fireworks_api_key({}) == "environment-key"
+
+
+def test_fireworks_model_requires_api_key(monkeypatch):
+    monkeypatch.delenv("FIREWORKS_API_KEY", raising=False)
+    with pytest.raises(QAAgentConfigurationError, match="Set FIREWORKS_API_KEY"):
+        create_fireworks_model()
+
+
+def test_fireworks_model_uses_configured_key_and_model(monkeypatch):
+    import langchain_fireworks
+
+    class FakeChatFireworks:
+        def __init__(self, **kwargs):
+            self.kwargs = kwargs
+
+    monkeypatch.setattr(langchain_fireworks, "ChatFireworks", FakeChatFireworks)
+    monkeypatch.delenv("TESTPULSE_FIREWORKS_MODEL", raising=False)
+
+    model = create_fireworks_model("test-fireworks-key")
+
+    assert model.kwargs["api_key"] == "test-fireworks-key"
+    assert model.kwargs["model"] == DEFAULT_FIREWORKS_MODEL
+    assert model.kwargs["temperature"] == 0
 
 
 def test_agent_receives_aggregate_metrics_not_issue_details(project_files):
@@ -240,33 +272,31 @@ def test_schema_limits_findings_and_text():
         )
 
 
-def test_local_endpoint_rejects_non_loopback_destinations():
-    assert _check_local_ollama_url("http://localhost:11434/") == (
-        "http://localhost:11434"
-    )
-    with pytest.raises(QAAgentConfigurationError, match="Remote endpoints"):
-        _check_local_ollama_url("https://example.com")
-
-
-def test_local_model_connection_error_is_actionable(project_files):
+def test_fireworks_connection_error_is_actionable(project_files):
     history, teams_config = project_files
     from scripts.dashboard_data import load_dashboard_data
 
     data = load_dashboard_data(history, history.parent / "no-events.jsonl", teams_config)
     model = FakeStructuredModel(error=httpx.ConnectError("connection refused"))
 
-    with pytest.raises(QAAgentUnavailableError, match="Start Ollama"):
+    with pytest.raises(QAAgentUnavailableError, match="Fireworks request"):
         run_portfolio_analysis(data, model=model)
 
 
-def test_ollama_model_errors_are_actionable(project_files):
+def test_fireworks_api_errors_are_actionable(project_files):
     history, teams_config = project_files
     from scripts.dashboard_data import load_dashboard_data
+    from openai import APIError
 
     data = load_dashboard_data(history, history.parent / "no-events.jsonl", teams_config)
-    model = FakeStructuredModel(error=ollama.ResponseError("model not found"))
+    error = APIError(
+        "request failed",
+        request=httpx.Request("POST", "https://api.fireworks.ai/inference/v1"),
+        body=None,
+    )
+    model = FakeStructuredModel(error=error)
 
-    with pytest.raises(QAAgentUnavailableError, match="model is available locally"):
+    with pytest.raises(QAAgentUnavailableError, match="Fireworks request"):
         run_portfolio_analysis(data, model=model)
 
 

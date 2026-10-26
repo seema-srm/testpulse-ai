@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100" role="img" aria-labelledby="title description">
   <title id="title">TestPulse AI application architecture</title>
-  <desc id="description">Users interact with the Streamlit dashboard. Application logic loads synthetic files, replays events, calculates metrics, writes simulations, stores weekly reports locally, and requests structured AI findings from a local Ollama model.</desc>
+  <desc id="description">Users interact with the Streamlit dashboard. Application logic loads synthetic files, replays events, calculates metrics, writes simulations, stores weekly reports locally, and sends aggregate metrics to Fireworks AI for structured findings.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
       <path d="M1,1 L11,6 L1,11 Z" fill="#0F766E"/>
@@ -24,7 +24,7 @@
   </defs>
   <rect width="1800" height="1100" fill="#F8FAFC"/>
   <text x="65" y="75" class="title">TestPulse AI - Application Architecture</text>
-  <text x="65" y="115" class="subtitle">Local-first dashboard: synthetic records, replayable simulations, weekly memory, and local AI analysis.</text>
+  <text x="65" y="115" class="subtitle">Synthetic QA dashboard: replayable simulations, weekly memory, and read-only Fireworks AI analysis.</text>
 
   <rect x="65" y="160" width="325" height="790" rx="20" class="group"/>
   <text x="95" y="207" class="layer">User</text>
@@ -59,7 +59,7 @@
   <rect x="870" y="740" width="330" height="150" rx="16" class="logic"/>
   <text x="1035" y="790" text-anchor="middle" class="node">LangGraph analysis</text>
   <text x="1035" y="825" text-anchor="middle" class="detail">Evidence checks and factual summary</text>
-  <text x="1035" y="854" text-anchor="middle" class="detail">Findings come from local model</text>
+  <text x="1035" y="854" text-anchor="middle" class="detail">Findings come from Fireworks AI</text>
 
   <rect x="1285" y="160" width="450" height="490" rx="20" class="group"/>
   <text x="1315" y="207" class="layer">Local files</text>
@@ -76,7 +76,7 @@
   <rect x="1285" y="700" width="450" height="250" rx="20" class="group"/>
   <text x="1315" y="747" class="layer">Local model service</text>
   <rect x="1325" y="790" width="365" height="105" rx="16" class="model"/>
-  <text x="1507" y="833" text-anchor="middle" class="node">Ollama llama3.1:8b</text>
+  <text x="1507" y="833" text-anchor="middle" class="node">Fireworks AI API</text>
   <text x="1507" y="865" text-anchor="middle" class="detail">Returns findings; no tools or data writes</text>
 
   <path d="M355 320 H460" class="arrow"/>

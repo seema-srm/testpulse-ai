@@ -1,6 +1,6 @@
 # Architecture Diagram
 
-TestPulse AI is a local-first Streamlit dashboard for synthetic QA portfolio data. Its AI workflow uses a local Ollama model to produce evidence-grounded risk findings; it does not give the model tools to call or permission to change project data.
+TestPulse AI is a Streamlit dashboard for synthetic QA portfolio data. Its AI workflow sends aggregate metrics to Fireworks AI to produce evidence-grounded risk findings; it does not give the model tools to call or permission to change project data.
 
 For a larger, zoomable view, open [the AI analysis demo flow](./ai-analysis-demo-flow.svg) or [the application architecture diagram](./application-architecture.svg). A spoken walkthrough is available in the [demo script](./demo-script.md).
 
@@ -24,10 +24,10 @@ flowchart LR
         prepareOutput["Output: aggregate facts and evidence IDs"]
         prepareFacts -->|"exclude issue details"| prepareOutput
     end
-    subgraph stepFour["4. Local model generates findings"]
-        localModel["Ollama with llama3.1:8b"]
+    subgraph stepFour["4. Fireworks AI generates findings"]
+        fireworksModel["Fireworks chat model"]
         modelOutput["Output: structured risk findings"]
-        localModel -->|"return findings"| modelOutput
+        fireworksModel -->|"return findings"| modelOutput
     end
     subgraph stepFive["5. Host validates and summarizes"]
         findingCheck["LangGraph validates team and evidence references"]
@@ -39,15 +39,15 @@ flowchart LR
 
     sourceOutput -->|"current portfolio data"| prepareFacts
     userAction -->|"run analysis"| prepareFacts
-    prepareOutput -->|"aggregate-only local request"| localModel
-    modelOutput -->|"structured response over loopback"| findingCheck
+    prepareOutput -->|"aggregate-only API request"| fireworksModel
+    modelOutput -->|"structured response over HTTPS"| findingCheck
     findingCheck -->|"validated findings"| finalReport
     factualSummary -->|"validated analysis"| finalReport
 ```
 
 ## Application Architecture
 
-The application separates the Streamlit presentation, synthetic-data and reporting logic, local file-based persistence, and local model service. Historical data remains read-only during simulation; current views are computed by replaying the append-only event log.
+The application separates the Streamlit presentation, synthetic-data and reporting logic, local file-based persistence, and Fireworks AI model service. Historical data remains read-only during simulation; current views are computed by replaying the append-only event log.
 
 <!-- mermaid-checked: no \n, no em-dash/en-dash, no {} in labels, subgraphs are id["label"], arrows are -->|"label"|, all subgraphs closed by end, ids unique -->
 ```mermaid
@@ -72,8 +72,8 @@ flowchart TD
         Memory[("Weekly report SQLite memory")]
         TeamConfig[("Team configuration YAML")]
     end
-    subgraph LocalModel["Local Model Service"]
-        Ollama["Ollama llama3.1:8b"]
+    subgraph ExternalModel["External AI Service"]
+        Fireworks["Fireworks AI API"]
     end
 
     Browser -->|"navigate and interact"| Streamlit
@@ -85,8 +85,8 @@ flowchart TD
     Streamlit -->|"record requested change"| Simulation
     Simulation -->|"append event"| Events
     Metrics -->|"aggregate synthetic facts"| Analysis
-    Analysis -->|"local structured request"| Ollama
-    Ollama -->|"structured findings"| Analysis
+    Analysis -->|"aggregate metrics over HTTPS"| Fireworks
+    Fireworks -->|"structured findings"| Analysis
     Streamlit -->|"generate weekly report"| Reports
     Metrics -->|"current synthetic metrics"| Reports
     Reports -->|"save and load snapshots"| Memory
@@ -103,21 +103,21 @@ flowchart TD
 | Data processing | Python and pandas | Python 3.13 tested; pandas `>=2.2,<3` | Load synthetic CSVs, replay events, and compute metrics |
 | Configuration | YAML and PyYAML | PyYAML `>=6,<7` | Configure the four synthetic QA teams |
 | Agent workflow | LangGraph | `>=1,<2` | Run model analysis and evidence-validation nodes |
-| Local model client | LangChain Ollama | `>=1,<2` | Request structured findings from local Ollama |
-| Local language model | Ollama `llama3.1:8b` | Local installation | Generate risk findings and human-review recommendations |
+| Model client | LangChain Fireworks | `>=0.2,<1` | Request structured findings from Fireworks AI |
+| Language model | Fireworks-hosted model | Fireworks API account and API key | Generate risk findings and human-review recommendations |
 | Weekly memory | SQLite | Python standard library | Persist weekly synthetic status snapshots |
 | Excel export | openpyxl | `>=3.1,<4` | Write formatted downloadable report workbooks |
 | Automated tests | pytest | `>=8,<10` | Validate data, metrics, simulations, reports, and UI behavior |
 
 ### Data Storage & External Services
 
-The application reads synthetic historical CSVs and team settings from local files. Simulation changes are appended to a JSONL event log and replayed against copies of the baseline records; the baseline CSVs are not rewritten. Weekly status snapshots are stored locally in SQLite, and downloadable reports are generated as Markdown or Excel. The AI integration connects only to an Ollama service on the local machine over loopback HTTP. There are no company Jira or Zephyr connections, remote model endpoints, cloud databases, caches, or message brokers.
+The application reads synthetic historical CSVs and team settings from local files. Simulation changes are appended to a JSONL event log and replayed against copies of the baseline records; the baseline CSVs are not rewritten. Weekly status snapshots are stored locally in SQLite, and downloadable reports are generated as Markdown or Excel. When explicitly run, the AI integration sends aggregate synthetic team and sprint metrics to Fireworks AI over HTTPS. The API key is provided through an environment variable or Streamlit Secrets, not source code. There are no company Jira or Zephyr connections, cloud databases, or message brokers.
 
 ### Key Architectural Decisions
 
 - Keep business logic in `scripts/` modules and use `app.py` for Streamlit page rendering and user interactions.
 - Treat historical CSVs as immutable inputs; simulate current-state changes through append-only events and replay.
-- Send aggregate synthetic metrics to the local model; calculate the factual summary in Python, validate team-specific evidence references, and leave final review of model recommendations to the user.
+- Send only aggregate synthetic metrics to Fireworks AI; calculate the factual summary in Python, validate team-specific evidence references, and leave final review of model recommendations to the user.
 
 ## Component Relationships
 
@@ -142,8 +142,8 @@ flowchart LR
         cSqlite[("Weekly status SQLite")]
         cYaml[("teams.yaml")]
     end
-    subgraph ComponentsModel["Local Model"]
-        cOllama["Ollama llama3.1:8b"]
+    subgraph ComponentsModel["External Model Service"]
+        cFireworks["Fireworks AI API"]
     end
 
     cApp -->|"renders"| cCharts
@@ -157,8 +157,8 @@ flowchart LR
     cMemory -->|"builds from metrics"| cData
     cMemory -->|"persists snapshots"| cSqlite
     cApp -->|"requests risk analysis"| cAgent
-    cAgent -->|"aggregate facts over loopback"| cOllama
-    cOllama -->|"structured findings"| cAgent
+    cAgent -->|"aggregate facts over HTTPS"| cFireworks
+    cFireworks -->|"structured findings"| cAgent
     cAgent -->|"validates evidence"| cApp
 ```
 
@@ -170,11 +170,11 @@ flowchart LR
 | `scripts/dashboard_data.py` | Business logic | Data and metrics module | Load CSVs and team YAML, replay events, and compute current and sprint metrics |
 | `scripts/simulation.py` | Business logic | Event-writing module | Validate requested synthetic status changes and append replayable events |
 | `scripts/status_memory.py` | Business logic | Reporting and persistence module | Build deterministic weekly status reports and save or retrieve SQLite snapshots |
-| `scripts/qa_agent.py` | Business logic | LangGraph workflow | Prepare aggregate facts, request local model findings, validate evidence, and generate the factual summary |
+| `scripts/qa_agent.py` | Business logic | LangGraph workflow | Prepare aggregate facts, request Fireworks AI findings, validate evidence, and generate the factual summary |
 | `scripts/table_styling.py` | Presentation support | Styling module | Apply consistent status and readiness styling to dashboard tables |
 | Plotly | Presentation | Charting library | Render team comparison and sprint trend charts |
 | Historical CSV files | Data | Immutable synthetic baseline | Store sprints, issues, test cases, cycles, executions, snapshots, and dependencies |
 | `data/simulations/events.jsonl` | Data | Append-only event log | Store simulation events that are replayed over baseline copies |
 | `data/status_memory.sqlite3` | Data | Local SQLite database | Persist weekly status snapshots for historical comparisons |
 | `config/teams.yaml` | Configuration | YAML settings | Define synthetic team IDs, names, project keys, and domains |
-| Ollama `llama3.1:8b` | Local model service | Structured-output LLM | Generate evidence-grounded risk findings and suggested actions; it cannot call application tools |
+| Fireworks AI | External model service | Structured-output LLM API | Generate evidence-grounded risk findings and suggested actions; it cannot call application tools |
