@@ -14,7 +14,7 @@ This project is configured for a public Streamlit Community Cloud demo. The app 
 1. Sign in to [Streamlit Community Cloud](https://share.streamlit.io) with the GitHub account that owns the repository.
 2. Select **Create app**, choose the `testpulse-ai` repository, the `main` branch, and `app.py`.
 3. In **Advanced settings**, select Python 3.12.
-4. In the **Secrets** field, paste the contents of `deployment/secrets.example.toml`. This disables the local Ollama call in the hosted app and displays the deterministic portfolio summary with an explanation.
+4. In the **Secrets** field, paste the contents of `deployment/secrets.example.toml`. This disables the local Ollama call in the hosted app and displays the deterministic portfolio summary with an explanation. If no secrets are configured, the app defaults to local AI being enabled, which will not work on Community Cloud.
 5. Deploy, wait for the health status to become available, and copy the assigned `*.streamlit.app` URL for the instructor.
 6. Test that URL in a private/incognito browser window. Verify the dashboard, Team Beta score, report export, and hosted AI limitation message.
 
