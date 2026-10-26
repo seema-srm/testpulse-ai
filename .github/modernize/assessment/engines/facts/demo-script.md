@@ -8,7 +8,7 @@
 
 - Start the dashboard with `streamlit run app.py`.
 - Confirm the four teams appear and the portfolio scorecard is visible.
-- To run AI analysis, configure `FIREWORKS_API_KEY` in Streamlit Secrets or the local environment.
+- For local AI analysis, confirm Ollama is running and `llama3.1:8b` is installed. The first analysis can take a minute while the local model loads.
 - Open the scalable diagrams if useful:
   - [AI analysis demo flow](./ai-analysis-demo-flow.svg)
   - [Application architecture](./application-architecture.svg)
@@ -16,7 +16,7 @@
 
 ## Spoken Introduction
 
-> “TestPulse AI is a QA portfolio dashboard built with synthetic Jira- and Zephyr-style data. It compares four QA teams across six sprints, tracks test outcomes and defects, and can model status changes without rewriting its historical baseline. It also includes weekly status memory and Fireworks AI-assisted risk analysis.”
+> “TestPulse AI is a QA portfolio dashboard built with synthetic Jira- and Zephyr-style data. It compares four QA teams across six sprints, tracks test outcomes and defects, and can model status changes without rewriting its historical baseline. It also includes weekly status memory and a local AI-assisted risk analysis.”
 
 ## Click-Through Demo
 
@@ -40,9 +40,9 @@
 
 ### 4. AI Risk Analysis
 
-**Action:** Open AI Risk Analysis and select **Run Portfolio Analysis**. If the API key is not configured, point out the factual summary and configuration notice.
+**Action:** Open AI Risk Analysis and select **Run Portfolio Analysis** when demoing locally. On the hosted demo, point out the factual summary and local-AI notice instead.
 
-> “The AI page sends aggregate synthetic team and sprint metrics to Fireworks AI, not individual issue records. The factual portfolio summary is calculated by the application, not written by the model. Fireworks returns risk findings and suggested actions; the app checks that each finding refers to a known team and cites evidence belonging to that team. The API key is kept in Streamlit Secrets, and the model has no tools or write access.”
+> “The AI page uses a local Ollama model when running on my computer. Python prepares aggregate team and sprint metrics, not individual issue records. The factual portfolio summary is calculated by the application, not written by the model. Locally, the model returns risk findings and suggested actions; the app checks that each finding refers to a known team and cites evidence belonging to that team. In the hosted demo, model inference is disabled because Ollama runs only on my computer.”
 
 ### 5. Simulation Center
 
@@ -57,15 +57,15 @@ Use the [AI analysis demo flow](./ai-analysis-demo-flow.svg) to explain the AI s
 1. The app loads baseline synthetic data and replays local simulation events.
 2. A user explicitly starts the analysis from the dashboard.
 3. Python calculates current metrics and assembles aggregate facts with evidence IDs.
-4. Fireworks AI returns structured findings; it does not run tools or edit records.
+4. The local Ollama model returns structured findings; it does not run tools or edit records.
 5. Host code validates team-specific evidence and computes the factual summary.
 6. Streamlit displays the summary, findings, evidence, and human-review suggestions.
 
-Use the [application architecture diagram](./application-architecture.svg) to point out the separation between Streamlit presentation, Python business logic, local storage, and the Fireworks AI service.
+Use the [application architecture diagram](./application-architecture.svg) to point out the separation between Streamlit presentation, Python business logic, local storage, and the local model service.
 
 ## Closing
 
-> “The main design choices are synthetic-only data, separation of UI from business logic, replayable simulations that preserve historical baselines, persistent weekly memory, and a read-only AI workflow. The AI helps explain possible risks, while the metrics and final review stay with the application and the user.”
+> “The main design choices are synthetic-only data, separation of UI from business logic, replayable simulations that preserve historical baselines, persistent weekly memory, and a local read-only AI workflow. The AI helps explain possible risks, while the metrics and final review stay with the application and the user.”
 
 ## Questions You May Be Asked
 
@@ -75,8 +75,8 @@ Use the [application architecture diagram](./application-architecture.svg) to po
 **Can the AI change issue or test statuses?**
 > “No. The model has no tools or write access. Simulation changes are explicit user actions handled by the application.”
 
-**What data is sent to Fireworks AI?**
-> “Only aggregate synthetic team and sprint metrics are sent for analysis. Individual issue and test records are excluded.”
+**Why use a local model?**
+> “The local Ollama setup keeps this project self-contained and avoids sending the synthetic portfolio prompt to a hosted model service.”
 
 **What does a readiness score of 100 mean?**
 > “It means the team meets all three score criteria. It is a portfolio signal for discussion, not an automated release approval.”

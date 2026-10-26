@@ -1,20 +1,22 @@
-"""Read-only LangGraph analysis of synthetic QA portfolio metrics using Fireworks AI."""
+"""Read-only, locally hosted LangGraph analysis of synthetic QA portfolio metrics."""
 
 import json
 import os
 from collections.abc import Mapping
 from typing import Annotated, Any, Literal, TypedDict
+from urllib.parse import urlparse
 
 import httpx
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.exceptions import OutputParserException
 from langgraph.graph import END, START, StateGraph
-from openai import APIError
+from ollama import RequestError, ResponseError
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from scripts.dashboard_data import build_sprint_metrics, build_team_metrics
 
-DEFAULT_FIREWORKS_MODEL = "accounts/fireworks/models/llama-v3p1-8b-instruct"
+DEFAULT_OLLAMA_URL = "http://localhost:11434"
+DEFAULT_OLLAMA_MODEL = "llama3.1:8b"
 MAX_FINDINGS = 4
 
 
@@ -23,41 +25,30 @@ class QAAgentError(RuntimeError):
 
 
 class QAAgentConfigurationError(QAAgentError):
-    """Raised when the Fireworks configuration is invalid or incomplete."""
+    """Raised when the local model configuration is invalid or incomplete."""
 
 
 class QAAgentUnavailableError(QAAgentError):
-    """Raised when the configured Fireworks model cannot be reached or invoked."""
+    """Raised when the configured local model cannot be reached or invoked."""
 
 
 class QAAgentValidationError(QAAgentError):
     """Raised when model output violates the analysis or evidence contract."""
 
 
-def fireworks_ai_enabled(secrets: Mapping[str, Any]) -> bool:
-    """Read whether this deployment should offer Fireworks AI analysis."""
+def local_ollama_enabled(secrets: Mapping[str, Any]) -> bool:
+    """Read whether this deployment should offer local Ollama analysis."""
     settings = secrets.get("testpulse", {})
     if not isinstance(settings, Mapping):
         raise QAAgentConfigurationError(
             "The [testpulse] deployment settings must be a TOML table."
         )
-    enabled = settings.get("enable_fireworks_ai", True)
+    enabled = settings.get("enable_local_ai", True)
     if not isinstance(enabled, bool):
         raise QAAgentConfigurationError(
-            "testpulse.enable_fireworks_ai must be true or false."
+            "testpulse.enable_local_ai must be true or false."
         )
     return enabled
-
-
-def get_fireworks_api_key(secrets: Mapping[str, Any]) -> str | None:
-    """Read the Fireworks key from Streamlit Secrets or the local environment."""
-    api_key = secrets.get("FIREWORKS_API_KEY", os.environ.get("FIREWORKS_API_KEY"))
-    if api_key is None:
-        return None
-    if not isinstance(api_key, str):
-        raise QAAgentConfigurationError("FIREWORKS_API_KEY must be a string.")
-    api_key = api_key.strip()
-    return api_key or None
 
 
 class RiskFinding(BaseModel):
@@ -220,36 +211,47 @@ def _validate_evidence(
     return analysis
 
 
-def create_fireworks_model(api_key: str | None = None):
-    """Create a Fireworks chat model with bounded generation settings."""
+def _check_local_ollama_url(url: str) -> str:
+    parsed = urlparse(url)
+    if (
+        parsed.scheme != "http"
+        or parsed.hostname not in {"localhost", "127.0.0.1", "::1"}
+        or parsed.username is not None
+        or parsed.password is not None
+        or parsed.query
+        or parsed.fragment
+    ):
+        raise QAAgentConfigurationError(
+            "Ollama must use a local HTTP endpoint (for example "
+            "http://localhost:11434). Remote endpoints are not allowed."
+        )
+    return url.rstrip("/")
+
+
+def create_local_ollama_model():
+    """Create a local-only Ollama chat model with bounded generation settings."""
     try:
-        from langchain_fireworks import ChatFireworks
+        from langchain_ollama import ChatOllama
     except ImportError as exc:
         raise QAAgentConfigurationError(
-            "The Fireworks integration is missing. Install project dependencies with "
+            "The Ollama integration is missing. Install project dependencies with "
             "`python -m pip install -r requirements.txt`."
         ) from exc
 
-    api_key = (api_key or os.environ.get("FIREWORKS_API_KEY", "")).strip()
-    if not api_key:
-        raise QAAgentConfigurationError(
-            "Set FIREWORKS_API_KEY in Streamlit Secrets or the local environment "
-            "before running AI analysis."
-        )
-    model_name = os.environ.get(
-        "TESTPULSE_FIREWORKS_MODEL", DEFAULT_FIREWORKS_MODEL
-    ).strip()
+    base_url = _check_local_ollama_url(
+        os.environ.get("TESTPULSE_OLLAMA_URL", DEFAULT_OLLAMA_URL)
+    )
+    model_name = os.environ.get("TESTPULSE_OLLAMA_MODEL", DEFAULT_OLLAMA_MODEL).strip()
     if not model_name or len(model_name) > 100:
         raise QAAgentConfigurationError(
-            "TESTPULSE_FIREWORKS_MODEL must name a Fireworks model."
+            "TESTPULSE_OLLAMA_MODEL must name a local Ollama model."
         )
-    return ChatFireworks(
-        api_key=api_key,
+    return ChatOllama(
         model=model_name,
+        base_url=base_url,
         temperature=0,
-        timeout=60,
-        max_retries=2,
-        max_tokens=900,
+        timeout=180,
+        num_predict=900,
     )
 
 
@@ -274,21 +276,32 @@ def build_portfolio_analysis_graph(model):
                     HumanMessage(content=json.dumps(request, allow_nan=False)),
                 ]
             )
-        except (httpx.HTTPError, APIError) as exc:
+        except httpx.HTTPError as exc:
             raise QAAgentUnavailableError(
-                "The Fireworks request could not be completed. Check the API key, "
-                "model name, account access, network connection, and rate limits."
+                "Could not connect to the local Ollama service. Start Ollama and "
+                "confirm it is listening at TESTPULSE_OLLAMA_URL or "
+                "http://localhost:11434."
+            ) from exc
+        except RequestError as exc:
+            raise QAAgentUnavailableError(
+                "The local Ollama request failed. Confirm Ollama is running and "
+                "the selected model is available."
+            ) from exc
+        except ResponseError as exc:
+            raise QAAgentUnavailableError(
+                "Ollama rejected the analysis request. Confirm that the configured "
+                f"model is available locally. Ollama reported: {exc.error}"
             ) from exc
         except OutputParserException as exc:
             raise QAAgentValidationError(
-                "Fireworks returned findings that did not match the required "
+                "Ollama returned findings that did not match the required "
                 "QA analysis format. Please run the analysis again."
             ) from exc
         try:
             analysis = PortfolioFindings.model_validate(response)
         except ValidationError as exc:
             raise QAAgentValidationError(
-                "Fireworks returned findings that did not match the required "
+                "Ollama returned findings that did not match the required "
                 "QA analysis format. Please run the analysis again."
             ) from exc
         return {"analysis": analysis}
@@ -309,12 +322,11 @@ def build_portfolio_analysis_graph(model):
 def run_portfolio_analysis(
     data: dict[str, Any],
     model=None,
-    api_key: str | None = None,
 ) -> PortfolioAnalysis:
-    """Run grounded analysis; inject a test model to avoid an API call."""
+    """Run a grounded portfolio analysis; pass a test model to avoid Ollama."""
     portfolio_facts, evidence = prepare_portfolio_facts(data)
     if model is None:
-        model = create_fireworks_model(api_key)
+        model = create_local_ollama_model()
     graph = build_portfolio_analysis_graph(model)
     result = graph.invoke(
         {"portfolio_facts": portfolio_facts, "evidence": evidence}

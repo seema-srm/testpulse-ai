@@ -18,8 +18,7 @@ def run_page(app, title):
     return app.run(timeout=15)
 
 
-def test_dashboard_pages_render_without_errors(monkeypatch):
-    monkeypatch.delenv("FIREWORKS_API_KEY", raising=False)
+def test_dashboard_pages_render_without_errors():
     app = AppTest.from_file(str(APP_PATH)).run(timeout=15)
 
     assert not app.exception
@@ -81,10 +80,7 @@ def test_dashboard_pages_render_without_errors(monkeypatch):
     run_page(app, "AI Risk Analysis")
     assert not app.exception
     assert app.title[0].value == "AI Risk Analysis"
-    assert not any(button.label == "Run Portfolio Analysis" for button in app.button)
-    assert any(
-        "FIREWORKS_API_KEY" in info.value for info in app.info
-    )
+    assert any(button.label == "Run Portfolio Analysis" for button in app.button)
 
     run_page(app, "Weekly Status Report")
     assert not app.exception
@@ -95,8 +91,7 @@ def test_dashboard_pages_render_without_errors(monkeypatch):
     }
 
 
-def test_analysis_report_uses_named_teams_risk_badges_and_metric_cards(monkeypatch):
-    monkeypatch.setenv("FIREWORKS_API_KEY", "test-fireworks-key")
+def test_analysis_report_uses_named_teams_risk_badges_and_metric_cards():
     app = AppTest.from_file(str(APP_PATH)).run(timeout=15)
     run_page(app, "AI Risk Analysis")
     app.session_state["qa_portfolio_analysis"] = {

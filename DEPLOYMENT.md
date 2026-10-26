@@ -1,6 +1,6 @@
 # Deploy TestPulse AI on Streamlit Community Cloud
 
-This project is configured for a public Streamlit Community Cloud demo. The app uses synthetic data only. Fireworks AI can generate risk findings in the hosted app when its API key is configured in Streamlit Secrets. Only aggregate synthetic team and sprint metrics are sent to Fireworks.
+This project is configured for a public Streamlit Community Cloud demo. The app uses synthetic data only. Its AI analysis remains local-only and is disabled in the hosted version; run the app locally with Ollama to use AI-generated findings.
 
 ## Prepare the GitHub repository
 
@@ -14,23 +14,16 @@ This project is configured for a public Streamlit Community Cloud demo. The app 
 1. Sign in to [Streamlit Community Cloud](https://share.streamlit.io) with the GitHub account that owns the repository.
 2. Select **Create app**, choose the `testpulse-ai` repository, the `main` branch, and `app.py`.
 3. In **Advanced settings**, select Python 3.12.
-4. In **Advanced settings → Secrets**, replace the old `enable_local_ai` setting with this configuration, using your Fireworks API key:
-   ```toml
-   FIREWORKS_API_KEY = "your-fireworks-api-key"
-
-   [testpulse]
-   enable_fireworks_ai = true
-   ```
-   Enter the real key directly in Streamlit Secrets. Do not commit it to the repository or share it in chat. If the key is not configured, the hosted app displays the deterministic portfolio summary and a configuration notice.
+4. In the **Secrets** field, paste the contents of `deployment/secrets.example.toml`. This disables the local Ollama call in the hosted app and displays the deterministic portfolio summary with an explanation. If no secrets are configured, the app defaults to local AI being enabled, which will not work on Community Cloud.
 5. Deploy, wait for the health status to become available, and copy the assigned `*.streamlit.app` URL for the instructor.
-6. Test that URL in a private/incognito browser window. Verify the dashboard, Team Beta score, report export, and AI analysis page.
+6. Test that URL in a private/incognito browser window. Verify the dashboard, Team Beta score, report export, and hosted AI limitation message.
 
 ## Hosted behavior and limitations
 
 - Team and sprint data is synthetic and read from the repository.
 - The checked-in event log supplies the initial demo state. User-created simulation events and weekly SQLite memory are ephemeral on Community Cloud and may reset when the app sleeps, restarts, or is redeployed.
-- The AI page calls Fireworks only when explicitly triggered. It sends aggregate synthetic metrics, not issue-level records, to the external Fireworks API.
-- Keep model API keys in local environment variables or Streamlit Secrets. Never commit keys to this repository or share them in chat.
+- The AI page displays the factual summary but does not call Ollama in the hosted configuration. Local analysis remains available when running the app on a computer with Ollama installed.
+- Do not paste passwords, GitHub tokens, or model API keys into this repository or the Streamlit Secrets example. No hosted model API key is needed for this deployment.
 
 Official guides:
 

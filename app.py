@@ -27,12 +27,10 @@ from scripts.table_styling import (
     style_outcome_table,
 )
 from scripts.qa_agent import (
-    DEFAULT_FIREWORKS_MODEL,
     PortfolioAnalysis,
     QAAgentError,
     build_portfolio_summary,
-    fireworks_ai_enabled,
-    get_fireworks_api_key,
+    local_ollama_enabled,
     prepare_portfolio_facts,
     run_portfolio_analysis,
 )
@@ -115,58 +113,42 @@ def show_recent_changes(data):
         st.info("No simulation changes recorded for this dataset yet.")
 
 
-def _fireworks_configuration_for_app():
+def _local_ollama_enabled_for_app():
     try:
-        secrets = st.secrets
-        enabled = fireworks_ai_enabled(secrets)
-        api_key = get_fireworks_api_key(secrets)
+        return local_ollama_enabled(st.secrets)
     except StreamlitSecretNotFoundError:
-        secrets = {}
-        enabled = fireworks_ai_enabled(secrets)
-        api_key = get_fireworks_api_key(secrets)
-    return enabled, api_key
+        return True
 
 
 def show_ai_risk_analysis(data):
     st.title("AI Risk Analysis")
-    enabled, api_key = _fireworks_configuration_for_app()
-    if not enabled:
-        st.caption("Fireworks AI analysis is disabled in this deployment.")
+    if not _local_ollama_enabled_for_app():
+        st.caption("AI inference is disabled in this hosted demo.")
         st.info(
-            "The portfolio summary below is calculated from synthetic metrics. "
-            "Enable Fireworks AI in the [testpulse] settings to run model analysis."
+            "The Ollama model runs locally and is not available to this hosted app. "
+            "The portfolio summary below is calculated from the synthetic metrics. "
+            "To view AI-generated findings, run TestPulse AI locally with Ollama."
         )
         st.subheader("Portfolio Summary")
         st.write(build_portfolio_summary(data))
         return
 
-    if not api_key:
-        st.caption("Fireworks AI is not configured for this deployment.")
-        st.info(
-            "Add FIREWORKS_API_KEY to Streamlit Secrets (or the local environment) "
-            "to enable AI-generated findings. The factual portfolio summary remains "
-            "available without an API key."
-        )
-        st.subheader("Portfolio Summary")
-        st.write(build_portfolio_summary(data))
-        return
-
-    st.caption("Read-only analysis of synthetic portfolio metrics using Fireworks AI.")
+    st.caption("Read-only analysis of synthetic portfolio metrics using local Ollama.")
     st.info(
-        "The portfolio summary is calculated directly from current metrics. Fireworks "
-        "receives aggregate team and sprint metrics only to produce risk findings; it "
-        "cannot access "
+        "The portfolio summary is calculated directly from current metrics. The local "
+        "model receives aggregate team and sprint metrics only to produce risk findings; "
+        "it cannot access "
         "individual issue details, connect to Jira/Zephyr, or write simulation events. "
-        "These aggregate synthetic metrics are sent to Fireworks AI. Review suggested "
-        "actions before using them."
+        "Review suggested actions before using them."
     )
 
     if st.button("Run Portfolio Analysis", type="primary"):
         try:
             with st.spinner(
-                "Analyzing synthetic metrics with Fireworks AI..."
+                "Analyzing with the local model. The first run may take a minute "
+                "or more while Ollama loads the model and generates the report."
             ):
-                analysis = run_portfolio_analysis(data, api_key=api_key)
+                analysis = run_portfolio_analysis(data)
         except QAAgentError as exc:
             st.error(str(exc), title="Analysis Could Not Be Completed")
         else:
@@ -179,9 +161,8 @@ def show_ai_risk_analysis(data):
     evidence = st.session_state.get("qa_portfolio_analysis_evidence")
     if not saved_analysis or not evidence:
         st.caption(
-            "Select Run Portfolio Analysis to generate findings. The default model is "
-            f"`{DEFAULT_FIREWORKS_MODEL}`; override it with "
-            "`TESTPULSE_FIREWORKS_MODEL`."
+            "Select Run Portfolio Analysis to generate a report. The default local "
+            "model is llama3.1:8b; install/pull it with `ollama pull llama3.1:8b`."
         )
         return
 
